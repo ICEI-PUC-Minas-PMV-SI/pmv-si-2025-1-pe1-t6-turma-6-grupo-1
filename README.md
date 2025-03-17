@@ -6,11 +6,13 @@
 
 `SEMESTRE: 1º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido:
+
+O projeto tem como objetivo principal desenvolver uma aplicação Web voltada para um conteúdo fitness. Dessa forma, será possível proporcionar aos usuários, por meio da tecnologia, uma maneira de se relacionar com as atividades físicas. Logo, a aplicação Web servirá como um motivador que acompanhará o usuário em suas atividades físicas e nutrição diárias, auxiliando-o a alcançar suas metas de saúde.
 
 ## Integrantes
 
-* Nome completo do aluno 1
+* Pedro Henrique Lyra Barbosa
 * Nome completo do aluno 2
 * Nome completo do aluno 3
 * Nome completo do aluno 4
@@ -19,7 +21,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Orientador
 
-* Nome completo do professor 1
+Clóvis Lemos Tavares
 
 # Planejamento
 
