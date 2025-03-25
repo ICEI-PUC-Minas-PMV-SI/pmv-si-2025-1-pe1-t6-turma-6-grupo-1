@@ -12,8 +12,9 @@ O projeto tem como objetivo principal desenvolver uma aplicação Web voltada pa
 
 ## Integrantes
 
+
 * Pedro Henrique Lyra Barbosa
-* Nome completo do aluno 2
+* Álvaro Pereira Rodarte
 * Nome completo do aluno 3
 * Nome completo do aluno 4
 * Nome completo do aluno 5
