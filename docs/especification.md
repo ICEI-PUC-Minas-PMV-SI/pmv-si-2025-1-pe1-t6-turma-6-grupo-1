@@ -1,26 +1,23 @@
 # Especificações do Projeto
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
-
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto.
-
-Caso deseje atribuir uma imagem a sua persona, utilize o site https://thispersondoesnotexist.com/
-
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+### Perfil:
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+Thiago Oliveira tem 25 anos e trabalha como desenvolvedor Python pleno em Campinas. É solteiro e mora sozinho em um pequeno apartamento no centro da cidade, ele tem uma intensa rotina de trabalho, passando a maior parte do dia sentado. Apesar de seu interesse por um estilo de vida mais saudável, ele tem dificuldade em manter hábitos consistentes de exercício e alimentação.  
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+### Estilo de vida:
+
+Com uma renda mensal de R$7.500 e formação superior completa, Thiago valoriza tecnologia e praticidade, buscando soluções digitais que facilitem sua rotina. Ele prefere treinos rápidos e eficientes que possam ser realizados em casa ou ao ar livre, sem depender de academias ou equipamentos complexos. Nos finais de semana, Thiago pratica atividades ao ar livre, como corridas leves em parques.
+  
+### Objetivos:
+
+Thiago quer melhorar seu condicionamento físico e evitar problemas de saúde no futuro, mas enfrenta desafios como a falta de tempo e motivação para treinar regularmente. Além disso, tem dificuldade em estruturar um plano de treinos e alimentação adequado aos seus objetivos e frequentemente esquece de se hidratar ao longo do dia.
+  
+### Preferências e comportamento:
+
+Seus principais objetivos incluem criar o hábito de treinar pelo menos três vezes por semana no curto prazo, melhorar sua resistência física e desenvolver mais força muscular no médio prazo e, no longo prazo, manter um equilíbrio entre exercícios, alimentação saudável e hidratação.
+
 
 ## Histórias de Usuários
 
@@ -28,8 +25,14 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Usuário             | encontrar treinos simples e fáceis, guiados e que sejam adaptáveis ao meu nível,           | Não esquecer de fazê-las               |
+|Usuário             | 
+Usuário
+um planejamento alimentar personalizado e alinhado aos meus objetivos (ganho de massa, emagrecimento, performance etc.),
+
+                | Permitir que possam administrar contas |
+|Usuário             | Alterar permissões                 | Permitir que possam administrar contas |
+|Usuário             | Alterar permissões                 | Permitir que possam administrar contas |
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
