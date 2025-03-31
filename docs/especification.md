@@ -25,34 +25,25 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário             | encontrar treinos simples e fáceis, guiados e que sejam adaptáveis ao meu nível,           | Não esquecer de fazê-las               |
-|Usuário             | 
-Usuário
-um planejamento alimentar personalizado e alinhado aos meus objetivos (ganho de massa, emagrecimento, performance etc.),
-
-                | Permitir que possam administrar contas |
-|Usuário             | Alterar permissões                 | Permitir que possam administrar contas |
-|Usuário             | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
+|Usuário             | encontrar treinos simples e fáceis, guiados e que sejam adaptáveis ao meu nível,           | eu possa começar a me exercitar de forma segura e motivadora, criando uma rotina consistente para melhorar minha saúde.              |
+|Usuário             | um planejamento alimentar personalizado e alinhado aos meus objetivos (ganho de massa, emagrecimento, performance etc.), | eu possa alcançar melhores resultados de maneira saudável e eficiente. |
+|Usuário             | acessar treinos que se adaptam a espaços pequenos, com ou sem equipamentos,                 | eu possa me exercitar de forma eficiente e prática mesmo com pouco espaço, sem comprometer minha rotina. |
+|Usuário             | encontrar sugestões de treinos para serem feitos em parques e praças, mesmo sem haver equipamentos nesses locais,               | eu possa diversificar minha rotina e consiga obter bons rendimentos, aproveitando o ambiente externo. |
 
 ## Requisitos
-
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade | 
 |------|-----------------------------------------|----| 
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | ALTA |  
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês   | MÉDIA | 
+|RF-001| A aplicação deve permitir ao usuário cadastrar uma conta. | ALTA |  
+|RF-002| A aplicação deve conter um login para o usuário.  | ALTA | 
+|RF-003| A aplicação deve incluir um formulário onde o usuário colocará seu peso, altura, idade, etc  | ALTA | 
+|RF-004| Com o formulário o gerenciamento do melhor treino para o usuário.  | ALTA | 
+|RF-005| O usuário deve conseguir visualizar um cronograma de treinos diários ou semanais.  | ALTA | 
+|RF-006| A aplicação deve permitir que o usuário escolha entre treinos para casa, academia ou ao ar livre. | ALTA | 
+|RF-007| A aplicação deve incluir a opção do usuário mudar algum exercício que lhe pareça desconfortável.  | ALTA | 
+
 
 
 ### Requisitos não Funcionais
@@ -62,21 +53,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| A aplicação deve ser responsiva | MÉDIA | 
 |RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
@@ -85,10 +61,3 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| Não pode ser desenvolvido um módulo de backend        |
-
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
