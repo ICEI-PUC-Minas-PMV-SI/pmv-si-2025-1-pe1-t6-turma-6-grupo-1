@@ -15,7 +15,7 @@ O projeto tem como objetivo principal desenvolver uma aplicação Web voltada pa
 
 * Pedro Henrique Lyra Barbosa
 * Álvaro Pereira Rodarte
-* Nome completo do aluno 3
+* Diogo Senhorinha Souza
 * Nome completo do aluno 4
 * Nome completo do aluno 5
 
