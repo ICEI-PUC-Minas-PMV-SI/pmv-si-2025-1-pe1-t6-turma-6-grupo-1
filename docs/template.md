@@ -6,7 +6,7 @@ O layout padrão do site será feito em HTML e CSS.
 
 --> Font-Family: Verdana
 
---> Font-size: 27px, 32px, 40px, 48px
+--> Font-size: 20px, 27px, 32px, 40px, 48px
 
 ## Paleta de cores
 
