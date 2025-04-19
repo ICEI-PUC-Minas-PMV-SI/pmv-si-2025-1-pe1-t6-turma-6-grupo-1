@@ -15,4 +15,4 @@ Este tipo de imagem irá melhorar o entendimento da estrutura pensado no site e 
 
 ### *clique na imagem para ver a imagem ampliada
 
-![Image](https://github.com/user-attachments/assets/04e758b0-6ce3-4ce4-a4f0-98c502b6cf05)
+![Image](https://github.com/user-attachments/assets/71224619-cb63-4c52-8048-e1ee26fca4a6)
