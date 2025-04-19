@@ -16,18 +16,8 @@ O layout padrão do site será feito em HTML e CSS.
 
 ![Image](https://github.com/user-attachments/assets/d64f3f55-031a-418e-a4e9-ac7f06f47460)
 
-## Iconografia
+## Logo
 
-Defina os ícones que serão utilizados e suas respectivas funções.
-
-Apresente os estilos CSS criados para cada um dos elementos apresentados.
-Outras seções podem ser adicionadas neste documento para apresentar padrões de componentes, de menus, etc.
+![Image](https://github.com/user-attachments/assets/6531b58c-b0bd-4bdb-a20c-42e484e7ce0d)
 
 
-> **Links Úteis**:
->
-> -  [Como criar um guia de estilo de design da Web](https://edrodrigues.com.br/blog/como-criar-um-guia-de-estilo-de-design-da-web/#)
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
