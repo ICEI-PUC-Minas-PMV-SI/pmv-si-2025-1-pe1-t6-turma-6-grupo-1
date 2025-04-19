@@ -1,10 +1,10 @@
 # Template padrão do site
 
-Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
+O layout padrão do site será feito em HTML e CSS.
 
 --> Cores RGB: #E23437, #B83333, #FA9393, #FFFFFF, #000000
 
---> Font-Family: Inter
+--> Font-Family: Verdana
 
 --> Font-size: 27px, 32px, 40px, 48px
 
@@ -14,8 +14,79 @@ Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com
 
 ## Tipografia
 
-Apresente as fontes que serão utilizadas e sua função no site. As principais funções são: Título de página, Título de Seção, Rótulos de componentes e Corpo de Texto.
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Verdana</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+  <style>
+  
+  body {
+  font-family: Verdana, sans-serif;
+  padding: 20px;
+}
 
+.font-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.font-container span {
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+  display: inline-block;
+}
+
+.regular {
+  font-weight: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.black {
+  font-weight: 900;
+}
+ </style>
+<body>
+  <div class="font-container">
+    <span class="verdana regular">Verdana Regular</span>
+    <span class="verdana italic">Verdana Italic</span>
+    <span class="verdana light">Verdana Light</span>
+    <span class="verdana light italic">Verdana Light Italic</span>
+    <span class="verdana medium">Verdana Medium</span>
+    <span class="verdana medium italic">Verdana Medium Italic</span>
+    <span class="verdana semibold">Verdana SemiBold</span>
+    <span class="verdana semibold italic">Verdana SemiBold Italic</span>
+    <span class="verdana bold">Verdana Bold</span>
+    <span class="verdana bold italic">Verdana Bold Italic</span>
+    <span class="verdana black">Verdana Black</span>
+    <span class="verdana black italic">Verdana Black Italic</span>
+  </div>
+</body>
+</html>
 
 ## Iconografia
 
