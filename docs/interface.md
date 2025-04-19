@@ -5,7 +5,7 @@ Este abaixo é o projeto de interface do nosso site, o TreinUP. O User Flow foi 
 
 ## User Flow - TreinUp
 
-![Image](https://github.com/user-attachments/assets/0ea64188-f0a6-404d-bef3-68ef43f22ef2)
+![Image](https://github.com/user-attachments/assets/d4508b3f-494b-4f62-9280-e05e2155ca7d)
 
 Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
 
