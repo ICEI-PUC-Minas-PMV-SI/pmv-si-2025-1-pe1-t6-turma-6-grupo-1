@@ -18,11 +18,9 @@ O layout padrão do site será feito em HTML e CSS.
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Exemplo Verdana</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
   <style>
-  
+    
   body {
   font-family: Verdana, sans-serif;
   padding: 20px;
@@ -69,7 +67,7 @@ O layout padrão do site será feito em HTML e CSS.
 .black {
   font-weight: 900;
 }
- </style>
+  </style>
 <body>
   <div class="font-container">
     <span class="verdana regular">Verdana Regular</span>
