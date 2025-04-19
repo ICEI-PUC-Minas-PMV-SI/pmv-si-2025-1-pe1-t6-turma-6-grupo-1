@@ -14,77 +14,7 @@ O layout padrão do site será feito em HTML e CSS.
 
 ## Tipografia
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-</head>
-  <style>
-    
-  body {
-  font-family: Verdana, sans-serif;
-  padding: 20px;
-}
-
-.font-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.font-container span {
-  padding: 10px 16px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: white;
-  display: inline-block;
-}
-
-.regular {
-  font-weight: normal;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.light {
-  font-weight: 300;
-}
-
-.medium {
-  font-weight: 500;
-}
-
-.semibold {
-  font-weight: 600;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.black {
-  font-weight: 900;
-}
-  </style>
-<body>
-  <div class="font-container">
-    <span class="verdana regular">Verdana Regular</span>
-    <span class="verdana italic">Verdana Italic</span>
-    <span class="verdana light">Verdana Light</span>
-    <span class="verdana light italic">Verdana Light Italic</span>
-    <span class="verdana medium">Verdana Medium</span>
-    <span class="verdana medium italic">Verdana Medium Italic</span>
-    <span class="verdana semibold">Verdana SemiBold</span>
-    <span class="verdana semibold italic">Verdana SemiBold Italic</span>
-    <span class="verdana bold">Verdana Bold</span>
-    <span class="verdana bold italic">Verdana Bold Italic</span>
-    <span class="verdana black">Verdana Black</span>
-    <span class="verdana black italic">Verdana Black Italic</span>
-  </div>
-</body>
-</html>
+![Image](https://github.com/user-attachments/assets/d64f3f55-031a-418e-a4e9-ac7f06f47460)
 
 ## Iconografia
 
