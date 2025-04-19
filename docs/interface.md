@@ -17,6 +17,14 @@ Estas imagens irão melhorar o entendimento da estrutura pensado para o site, ac
 
 ![Image](https://github.com/user-attachments/assets/71224619-cb63-4c52-8048-e1ee26fca4a6)
 
+## Cadastro e Login
+
+![Image](https://github.com/user-attachments/assets/9cc623e0-4e97-4be3-a78c-ea30b1e07d3a)
+
+## Feedback
+
+![Image](https://github.com/user-attachments/assets/53c076ca-82e5-47f9-9c26-d95406239ae6)
+
 ## Treino personalizado em casa
 
 ![Image](https://github.com/user-attachments/assets/f163b5cc-1708-41e2-bcc5-1939d2d65740)
@@ -29,6 +37,10 @@ Estas imagens irão melhorar o entendimento da estrutura pensado para o site, ac
 
 ![Image](https://github.com/user-attachments/assets/809e713d-26c7-4fc5-a4df-243eece878d4)
 
+## Link para o formulário da página "Monte seu treino"
+
+![Image](https://github.com/user-attachments/assets/60ec845d-5c60-4958-81bc-7a83d6243749)
+
 ## Calcule
 
-![Image](https://github.com/user-attachments/assets/26040a6a-4c10-4132-a1f6-7543ee586ac4)
+![Image](https://github.com/user-attachments/assets/f2513c40-dc26-4363-9a6e-8505817bae56)
