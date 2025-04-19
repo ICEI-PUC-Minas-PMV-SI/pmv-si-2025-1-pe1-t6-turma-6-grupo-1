@@ -8,16 +8,9 @@ Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com
 
 --> Font-size: 27px, 32px, 40px, 48px
 
+## Paleta de cores
 
-## Design
-
-Detalhe os layouts que serão utilizados. Apresente onde será colocado o logo do sistema. Defina os menus padrões, entre outras coisas.
-
-
-## Cores
-
-Apresente a paleta de cores que será utilizada. Uma ferramenta interessante para a criação de palestas de cores é o *Adobe Color* ([https://color.adobe.com/pt/create/color-wheel](https://color.adobe.com/pt/create/color-wheel)).
-
+![Image](https://github.com/user-attachments/assets/09491c9c-aa50-497e-8ed6-5c3bdbf5b119)
 
 ## Tipografia
 
