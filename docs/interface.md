@@ -19,7 +19,7 @@ Estas imagens irão melhorar o entendimento da estrutura pensado para o site, ac
 
 ## Cadastro e Login
 
-![Image](https://github.com/user-attachments/assets/9cc623e0-4e97-4be3-a78c-ea30b1e07d3a)
+![Image](https://github.com/user-attachments/assets/b36ae375-48df-4387-9053-c1f771e00f08)
 
 ## Feedback
 
