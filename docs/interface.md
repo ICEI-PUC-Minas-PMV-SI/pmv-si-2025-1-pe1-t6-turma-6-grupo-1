@@ -16,3 +16,7 @@ Estas imagens irão melhorar o entendimento da estrutura pensado para o site, ac
 ## Página Inicial
 
 ![Image](https://github.com/user-attachments/assets/71224619-cb63-4c52-8048-e1ee26fca4a6)
+
+## Calcule
+
+![Image](https://github.com/user-attachments/assets/26040a6a-4c10-4132-a1f6-7543ee586ac4)
