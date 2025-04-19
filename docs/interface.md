@@ -25,6 +25,10 @@ Estas imagens irão melhorar o entendimento da estrutura pensado para o site, ac
 
 ![Image](https://github.com/user-attachments/assets/46ffc284-8a24-4f5e-82d7-c4951548b010)
 
+## Monte seu treino
+
+![Image](https://github.com/user-attachments/assets/809e713d-26c7-4fc5-a4df-243eece878d4)
+
 ## Calcule
 
 ![Image](https://github.com/user-attachments/assets/26040a6a-4c10-4132-a1f6-7543ee586ac4)
