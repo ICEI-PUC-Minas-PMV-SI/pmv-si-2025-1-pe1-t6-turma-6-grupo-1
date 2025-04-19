@@ -3,7 +3,9 @@
 Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
 
 --> Cores RGB: #E23437, #B83333, #FA9393, #FFFFFF, #000000
+
 --> Font-Family: Inter
+
 --> Font-size: 27px, 32px, 40px, 48px
 
 
