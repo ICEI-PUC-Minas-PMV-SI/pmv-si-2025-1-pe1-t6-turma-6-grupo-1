@@ -21,6 +21,10 @@ Estas imagens irão melhorar o entendimento da estrutura pensado para o site, ac
 
 ![Image](https://github.com/user-attachments/assets/f163b5cc-1708-41e2-bcc5-1939d2d65740)
 
+## Treino personalizado ao ar livre
+
+![Image](https://github.com/user-attachments/assets/46ffc284-8a24-4f5e-82d7-c4951548b010)
+
 ## Calcule
 
 ![Image](https://github.com/user-attachments/assets/26040a6a-4c10-4132-a1f6-7543ee586ac4)
