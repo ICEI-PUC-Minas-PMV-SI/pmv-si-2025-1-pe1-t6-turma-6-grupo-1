@@ -23,6 +23,6 @@ O layout padrão do site será feito em HTML e CSS.
 
 ## Logo
 
-![Image](https://github.com/user-attachments/assets/6531b58c-b0bd-4bdb-a20c-42e484e7ce0d)
+![Image](https://github.com/user-attachments/assets/e9f86e81-e3d4-4713-87e9-ade1e7a37430)
 
 
