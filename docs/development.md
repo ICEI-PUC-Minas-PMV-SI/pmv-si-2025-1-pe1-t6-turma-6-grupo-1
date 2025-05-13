@@ -45,6 +45,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não-funcionais q
 | Peso        | Número (Ponto Flutuante)            | Peso do usuário                       | 60.5                                  |
 | Altura (cm)       | Número (Inteiro)             | Altura do usuário                       | 171                          |
 | Se possui doença ou deficiência  | Booleano  | A opção do usuário escolher "sim" ou "não" para a pergunta | Não                                              |
-| Se já faz atividade física  | Booleano  | A opção do usuário escolher "sim" ou "não" para a pergunta | Sim                                              |
+| Se já faz alguma atividade física  | Booleano  | A opção do usuário escolher "sim" ou "não" para a pergunta | Sim                                              |
 
 
