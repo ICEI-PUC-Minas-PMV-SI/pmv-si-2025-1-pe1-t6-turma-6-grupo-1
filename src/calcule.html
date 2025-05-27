@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TreinUP</title>
+  <link rel="stylesheet" href="calcule.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="TreinUP Logo" class="logo"/>
+    <nav>
+      <ul>
+        <li><a href="montetreino.html" class="otherbtn">Monte seu Treino</a></li>
+        <li><a href="#" class="otherbtn">Calcule</a></li>
+        <li id="nav-auth-section">
+            <a href="login.html" class="btn">Login / Cadastro</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="faixa-decorativa"></div>
+
+  <div class="form-container">
+    <label for="tipoCalculo">Tipo de cálculo:</label>
+    <select id="tipoCalculo" onchange="atualizarFormulario()">
+      <option value="imc">IMC</option>
+      <option value="tmb">TMB (Taxa Metabólica Basal)</option>
+      <option value="calorias">Calorias</option>
+      <option value="agua">Água</option>
+    </select>
+
+    <div id="inputs"></div>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <div class="resultados" id="resultados"></div>
+  </div>
+
+  <script src="calcule.js"></script>
+</body>
+
+  <footer>
+    <img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="Logo TreinUP">
+    <p> &copy; 2025 TreinUP - Todos os direitos reservados</p>
+</footer>
+</html>
