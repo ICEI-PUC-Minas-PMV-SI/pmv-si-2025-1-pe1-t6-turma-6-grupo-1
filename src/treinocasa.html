@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreinUP - Treino Personalizado em Casa</title>
+    <link rel="stylesheet" href="treinocasa.css" />
+    
+</head>
+<body>
+    <div class="container">
+        <div class="logo"><img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="TreinUP Logo"></div>
+        
+        <div id="formSection">
+             <div class="hero-image has-image">
+                    <img src="istockphoto-1222178625-612x612.jpg" alt="Descrição da imagem">
+             </div>
+            <h1>Encontre seu treino perfeito para fazer em casa!</h1>
+            
+            <form id="workoutForm">
+                <div class="form-group">
+                    <label>Você mora em um local...</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="space" data-value="pequeno">
+                            🏠 Pequeno
+                        </button>
+                        <button type="button" class="option-btn" data-field="space" data-value="grande">
+                            🏡 Grande
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Sua faixa etária é...</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="age" data-value="adolescente">
+                            👦 Adolescente
+                        </button>
+                        <button type="button" class="option-btn" data-field="age" data-value="adulto">
+                            👨 Adulto
+                        </button>
+                        <button type="button" class="option-btn" data-field="age" data-value="idoso">
+                            👴 Idoso
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Possui alguma deficiência física?</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="disability" data-value="sim">
+                            ✅ Sim
+                        </button>
+                        <button type="button" class="option-btn" data-field="disability" data-value="nao">
+                            ❌ Não
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Quanto tempo livre você tem?</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="time" data-value="30min">
+                            ⏰ Até 30 min
+                        </button>
+                        <button type="button" class="option-btn" data-field="time" data-value="1hora">
+                            🕐 1 hora
+                        </button>
+                        <button type="button" class="option-btn" data-field="time" data-value="1h30">
+                            ⏳ Mais de 1h30
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="generateBtn" disabled>
+                    🎯 Gerar Treino Personalizado
+                </button>
+            </form>
+        </div>
+
+        <div id="workoutResult" class="workout-result">
+            <div class="workout-title">🎉 Seu Treino Personalizado</div>
+            <div id="workoutContent"></div>
+            <div class="tips">
+                <h4>💡 Dicas Importantes:</h4>
+                <ul>
+                    <li><strong>Aquecimento:</strong> Sempre faça 5-10 minutos de aquecimento antes do treino</li>
+                    <li><strong>Hidratação:</strong> Mantenha-se hidratado durante todo o treino</li>
+                    <li><strong>Descanso:</strong> Respeite os intervalos entre as séries</li>
+                    <li><strong>Progressão:</strong> Aumente gradualmente a intensidade</li>
+                    <li><strong>Consulta médica:</strong> Consulte um médico antes de iniciar qualquer programa de exercícios</li>
+                </ul>
+            </div>
+            <button class="back-btn" onclick="resetForm()">Voltar ao Formulário</button>
+        </div>
+    </div>
+
+    <script>
+        const formData = {
+            space: null,
+            age: null,
+            disability: null,
+            time: null
+        };
+
+        // Workout database
+        const workouts = {
+            // Espaço pequeno, sem deficiência
+            pequeno_adolescente_nao_30min: [
+                { name: "Polichinelos", details: "3 séries de 30 segundos com 30s de descanso" },
+                { name: "Flexões ( joelhos no chão )", details: "3 séries de 8-12 repetições" },
+                { name: "Agachamentos", details: "3 séries de 15 repetições" },
+                { name: "Prancha", details: "3 séries de 20-30 segundos" }
+            ],
+            pequeno_adulto_nao_30min: [
+                { name: "Burpees", details: "3 séries de 5-8 repetições" },
+                { name: "Flexões", details: "3 séries de 10-15 repetições" },
+                { name: "Agachamentos", details: "3 séries de 20 repetições" },
+                { name: "Mountain climbers", details: "3 séries de 30 segundos" }
+            ],
+            pequeno_idoso_nao_30min: [
+                { name: "Marcha estacionária", details: "5 minutos em ritmo moderado" },
+                { name: "Flexões na parede", details: "3 séries de 8-10 repetições" },
+                { name: "Agachamentos com apoio", details: "3 séries de 10 repetições" },
+                { name: "Alongamentos", details: "5 minutos de alongamento geral" }
+            ],
+            // Espaço grande, sem deficiência
+            grande_adolescente_nao_1hora: [
+                { name: "Corrida no local", details: "10 minutos de aquecimento" },
+                { name: "Circuito HIIT", details: "20 minutos: burpees, jumping jacks, mountain climbers" },
+                { name: "Exercícios de força", details: "15 minutos: flexões, agachamentos, lunges" },
+                { name: "Alongamento", details: "15 minutos de relaxamento" }
+            ],
+            grande_adulto_nao_1h30: [
+                { name: "Aquecimento dinâmico", details: "10 minutos de mobilidade" },
+                { name: "Treino cardiovascular", details: "30 minutos: corrida, polichinelos, burpees" },
+                { name: "Treino de força", details: "30 minutos: flexões, agachamentos, lunges, prancha" },
+                { name: "Treino funcional", details: "15 minutos: exercícios compostos" },
+                { name: "Relaxamento", details: "15 minutos de alongamento e respiração" }
+            ],
+            // Com deficiência física
+            pequeno_adulto_sim_30min: [
+                { name: "Exercícios sentado", details: "Movimentos de braços e tronco - 10 minutos" },
+                { name: "Respiração profunda", details: "5 minutos de exercícios respiratórios" },
+                { name: "Alongamentos adaptados", details: "10 minutos de alongamento suave" },
+                { name: "Relaxamento", details: "5 minutos de meditação" }
+            ],
+            grande_idoso_sim_1hora: [
+                { name: "Caminhada assistida", details: "15 minutos em ritmo lento" },
+                { name: "Exercícios na cadeira", details: "20 minutos de movimentos adaptados" },
+                { name: "Fisioterapia básica", details: "15 minutos de exercícios terapêuticos" },
+                { name: "Relaxamento", details: "10 minutos de técnicas de relaxamento" }
+            ]
+        };
+
+        // Handle option selection
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const field = this.dataset.field;
+                const value = this.dataset.value;
+                
+                // Remove selection from other buttons in the same group
+                document.querySelectorAll(`[data-field="${field}"]`).forEach(b => {
+                    b.classList.remove('selected');
+                });
+                
+                // Add selection to clicked button
+                this.classList.add('selected');
+                formData[field] = value;
+                
+                // Check if all fields are filled
+                checkFormCompletion();
+            });
+        });
+
+        function checkFormCompletion() {
+            const allFilled = Object.values(formData).every(value => value !== null);
+            document.getElementById('generateBtn').disabled = !allFilled;
+        }
+
+        // Handle form submission
+        document.getElementById('workoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateWorkout();
+        });
+
+        function generateWorkout() {
+            const key = `${formData.space}_${formData.age}_${formData.disability}_${formData.time}`;
+            let workout = workouts[key];
+            
+            // Fallback logic for combinations not explicitly defined
+            if (!workout) {
+                workout = getDefaultWorkout();
+            }
+            
+            displayWorkout(workout);
+        }
+
+        function getDefaultWorkout() {
+            // Default workout based on general parameters
+            if (formData.disability === 'sim') {
+                return [
+                    { name: "Exercícios adaptados", details: "Movimentos suaves e seguros - 15 minutos" },
+                    { name: "Respiração", details: "Exercícios respiratórios - 10 minutos" },
+                    { name: "Alongamento", details: "Alongamento assistido - 10 minutos" }
+                ];
+            }
+            
+            if (formData.time === '30min') {
+                return [
+                    { name: "Aquecimento", details: "5 minutos de movimentos leves" },
+                    { name: "Exercício principal", details: "15 minutos de atividade moderada" },
+                    { name: "Relaxamento", details: "10 minutos de alongamento" }
+                ];
+            }
+            
+            return [
+                { name: "Aquecimento", details: "10 minutos de preparação" },
+                { name: "Cardio", details: "20 minutos de exercícios cardiovasculares" },
+                { name: "Força", details: "20 minutos de exercícios de resistência" },
+                { name: "Alongamento", details: "10 minutos de relaxamento" }
+            ];
+        }
+
+        function displayWorkout(workout) {
+            const content = document.getElementById('workoutContent');
+            content.innerHTML = workout.map(exercise => `
+                <div class="exercise">
+                    <div class="exercise-name">${exercise.name}</div>
+                    <div class="exercise-details">${exercise.details}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('workoutResult').style.display = 'block';
+        }
+
+        function resetForm() {
+            // Reset form data
+            Object.keys(formData).forEach(key => formData[key] = null);
+            
+            // Reset UI
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('formSection').style.display = 'block';
+            document.getElementById('workoutResult').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

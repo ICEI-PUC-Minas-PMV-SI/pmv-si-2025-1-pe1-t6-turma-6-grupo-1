@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Feedback</title>
+    <link rel="stylesheet" href="feedback.css" />
+    
+</head>
+<body>
+    <!-- Conteúdo para usuários não logados -->
+    <div id="login-required" class="hidden">
+        <div class="container">
+            <div class="content">
+                <h2>🔒 Acesso Restrito</h2>
+                <p>Você precisa estar logado para acessar o sistema de feedback.</p>
+                <a href="login.html" class="login-link">Fazer Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo para usuários logados -->
+    <div id="authenticated-content" class="hidden">
+        <div class="container">
+            <!-- Header -->
+            <div class="header">
+                <div class="user-info">
+                    <span id="welcomeMessage">Olá, Usuário</span>
+                    <button class="logout-btn" onclick="logout()">Sair</button>
+                </div>
+                <h1>Sistema de Feedback</h1>
+                <p>Sua opinião é muito importante para nós!</p>
+            </div>
+
+            <!-- Navegação -->
+            <div class="navigation">
+                <button class="nav-btn active" onclick="showForm()">Enviar Feedback</button>
+                <button class="nav-btn" onclick="showFeedbacks()">Ver Feedbacks</button>
+                <button class="nav-btn" onclick="showPublicFeedbacks()">Feedbacks Públicos</button>
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="content">
+                <!-- Formulário de Feedback -->
+                <div id="feedback-form" class="content-section active">
+                    <form id="feedbackForm">
+                        <div class="form-group">
+                            <label for="name">Nome:</label>
+                            <input type="text" id="name" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Categoria:</label>
+                            <select id="category" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="treino">Treino</option>
+                                <option value="atendimento">Atendimento</option>
+                                <option value="equipamentos">Equipamentos</option>
+                                <option value="limpeza">Limpeza</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Avaliação:</label>
+                            <div class="stars">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <input type="hidden" id="rating" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Comentário:</label>
+                            <textarea id="comment" rows="4" placeholder="Compartilhe sua experiência..." required></textarea>
+                        </div>
+
+                        <!-- Opções de Compartilhamento -->
+                        <div class="sharing-options">
+                            <h4>Opções de Compartilhamento</h4>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="sharePublic">
+                                <span>Permitir que outros vejam meu feedback</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="showName">
+                                <span>Mostrar meu nome (caso contrário será anônimo)</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Enviar Feedback</button>
+                    </form>
+
+                    <div id="success-message" class="success-message hidden">
+                        ✅ Feedback enviado com sucesso!
+                    </div>
+                </div>
+
+                <!-- Lista de Feedbacks do Usuário -->
+                <div id="feedback-list" class="content-section">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3>Meus Feedbacks</h3>
+                        <button onclick="clearUserFeedbacks()" style="background: #dc3545; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                            Limpar Todos
+                        </button>
+                    </div>
+                    <div id="feedbacks-container"></div>
+                </div>
+
+                <!-- Feedbacks Públicos -->
+                <div id="public-feedbacks" class="content-section">
+                    <h3 style="margin-bottom: 20px;">Feedbacks da Comunidade</h3>
+                    
+                    <div class="filters">
+                        <select id="filterCategory">
+                            <option value="all">Todas as categorias</option>
+                            <option value="treino">Treino</option>
+                            <option value="atendimento">Atendimento</option>
+                            <option value="equipamentos">Equipamentos</option>
+                            <option value="limpeza">Limpeza</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <select id="sortBy">
+                            <option value="recent">Mais recentes</option>
+                            <option value="rating">Melhor avaliação</option>
+                            <option value="category">Por categoria</option>
+                        </select>
+                    </div>
+                    
+                    <div id="public-feedbacks-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <script src="feedback.js"></script>
+</body>
+</html>

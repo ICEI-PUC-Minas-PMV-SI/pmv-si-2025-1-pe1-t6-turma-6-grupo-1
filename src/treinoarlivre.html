@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TreinUP - Treino Personalizado ao Ar Livre</title>
+    <link rel="stylesheet" href="treinoarlivre.css" />
+
+</head>
+<body>
+    <div class="container">
+        <div class="logo"><img src="ChatGPT Image Apr 19, 2025, 02_25_20 PM (1).png" alt="TreinUP Logo"></div>
+        
+        <div id="formSection">
+            <div class="hero-image has-image">
+                    <img src="imagemarlivre.JPG" alt="Descrição da imagem">
+             </div>
+            <h1>Encontre seu treino perfeito para fazer ao ar livre!</h1>
+            
+            <form id="workoutForm">
+                <div class="form-group">
+                    <label>Que tipo de ambiente ao ar livre você prefere?</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="environment" data-value="parque">
+                            🌳 Parque
+                        </button>
+                        <button type="button" class="option-btn" data-field="environment" data-value="praia">
+                            🏖️ Praia
+                        </button>
+                        <button type="button" class="option-btn" data-field="environment" data-value="quintal">
+                            🏡 Quintal
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Sua faixa etária é...</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="age" data-value="adolescente">
+                            👦 Adolescente
+                        </button>
+                        <button type="button" class="option-btn" data-field="age" data-value="adulto">
+                            👨 Adulto
+                        </button>
+                        <button type="button" class="option-btn" data-field="age" data-value="idoso">
+                            👴 Idoso
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Qual seu nível de condicionamento físico?</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="fitness" data-value="iniciante">
+                            🟢 Iniciante
+                        </button>
+                        <button type="button" class="option-btn" data-field="fitness" data-value="intermediario">
+                            🟡 Intermediário
+                        </button>
+                        <button type="button" class="option-btn" data-field="fitness" data-value="avancado">
+                            🔴 Avançado
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Quanto tempo livre você tem?</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="time" data-value="30min">
+                            ⏰ Até 30 min
+                        </button>
+                        <button type="button" class="option-btn" data-field="time" data-value="1hora">
+                            🕐 1 hora
+                        </button>
+                        <button type="button" class="option-btn" data-field="time" data-value="1h30">
+                            ⏳ Mais de 1h30
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Qual seu objetivo principal?</label>
+                    <div class="option-group">
+                        <button type="button" class="option-btn" data-field="goal" data-value="cardio">
+                            ❤️ Cardio
+                        </button>
+                        <button type="button" class="option-btn" data-field="goal" data-value="flexibilidade">
+                            🧘 Flexibilidade
+                        </button>
+                        <button type="button" class="option-btn" data-field="goal" data-value="geral">
+                            ⚡ Geral
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="generateBtn" disabled>
+                    🎯 Gerar Treino ao Ar Livre
+                </button>
+            </form>
+        </div>
+
+        <div id="workoutResult" class="workout-result">
+            <div class="workout-title">🎉 Seu Treino Personalizado ao Ar Livre</div>
+            
+            <div class="weather-warning">
+                <h4>🌤️ Dica do Clima:</h4>
+                <p>Verifique sempre as condições climáticas antes de sair. Em dias muito quentes, prefira horários mais frescos (manhã ou final da tarde). Em caso de chuva, tenha um plano alternativo!</p>
+            </div>
+            
+            <div id="workoutContent"></div>
+            
+            <div class="tips">
+                <h4>💡 Dicas Importantes:</h4>
+                <ul>
+                    <li><strong>Hidratação:</strong> Leve sempre uma garrafa de água, especialmente em dias quentes</li>
+                    <li><strong>Proteção solar:</strong> Use protetor solar, boné e roupas adequadas</li>
+                    <li><strong>Aquecimento:</strong> Faça 5-10 minutos de aquecimento antes do treino</li>
+                    <li><strong>Segurança:</strong> Escolha locais seguros e bem iluminados</li>
+                    <li><strong>Equipamentos:</strong> Use tênis adequado para o terreno</li>
+                    <li><strong>Respeite a natureza:</strong> Não deixe lixo e respeite a fauna e flora local</li>
+                </ul>
+            </div>
+            <button class="back-btn" onclick="resetForm()">Voltar ao Formulário</button>
+        </div>
+    </div>
+
+    <script>
+        const formData = {
+            environment: null,
+            age: null,
+            fitness: null,
+            time: null,
+            goal: null
+        };
+
+        // Outdoor workout database
+const outdoorWorkouts = {
+    // PARQUE - CARDIO
+    parque_adolescente_iniciante_30min_cardio: [
+        { name: "Aquecimento leve", details: "5 minutos de caminhada e movimentos articulares" },
+        { name: "Corrida suave", details: "15 minutos de trote leve com pausas" },
+        { name: "Exercícios básicos", details: "8 minutos: polichinelos e corrida estacionária" },
+        { name: "Alongamento", details: "2 minutos de relaxamento" }
+    ],
+  
+    parque_adolescente_iniciante_1hora_cardio: [
+        { name: "Aquecimento progressivo", details: "10 minutos de caminhada acelerando gradualmente" },
+        { name: "Corrida intervalada básica", details: "25 minutos: 1 min corrida + 2 min caminhada" },
+        { name: "Atividades lúdicas", details: "15 minutos: jogos de movimento e coordenação" },
+        { name: "Relaxamento", details: "10 minutos de alongamento e respiração" }
+    ],
+  
+    parque_adolescente_iniciante_1h30_cardio: [
+        { name: "Aquecimento completo", details: "15 minutos de preparação corporal" },
+        { name: "Circuito cardio básico", details: "40 minutos: estações de baixa intensidade" },
+        { name: "Atividades recreativas", details: "25 minutos: brincadeiras ativas em grupo" },
+        { name: "Recuperação", details: "10 minutos de alongamento e hidratação" }
+    ],
+  
+    parque_adolescente_intermediario_30min_cardio: [
+        { name: "Aquecimento dinâmico", details: "5 minutos de movimentos preparatórios" },
+        { name: "Corrida intervalada", details: "18 minutos: 2 min corrida + 1 min caminhada" },
+        { name: "Finalização", details: "7 minutos de exercícios funcionais básicos" }
+    ],
+  
+    parque_adolescente_intermediario_1hora_cardio: [
+        { name: "Aquecimento dinâmico", details: "10 minutos: polichinelos, corrida estacionária" },
+        { name: "Corrida intervalada", details: "25 minutos: variações de ritmo e intensidade" },
+        { name: "Circuito funcional", details: "15 minutos: estações com diferentes exercícios" },
+        { name: "Relaxamento", details: "10 minutos de alongamento em grupo" }
+    ],
+  
+    parque_adolescente_intermediario_1h30_cardio: [
+        { name: "Preparação completa", details: "15 minutos de aquecimento progressivo" },
+        { name: "Treino cardio avançado", details: "45 minutos: corrida com variações de terreno" },
+        { name: "Exercícios complementares", details: "20 minutos: atividades funcionais" },
+        { name: "Recuperação", details: "10 minutos de alongamento e relaxamento" }
+    ],
+  
+    parque_adolescente_avancado_30min_cardio: [
+        { name: "Aquecimento intenso", details: "5 minutos de preparação de alta intensidade" },
+        { name: "HIIT cardio", details: "20 minutos: treino intervalado de alta intensidade" },
+        { name: "Cool down", details: "5 minutos de recuperação ativa" }
+    ],
+  
+    parque_adolescente_avancado_1hora_cardio: [
+        { name: "Aquecimento especializado", details: "10 minutos de preparação específica" },
+        { name: "Treino HIIT avançado", details: "35 minutos: alta intensidade com recuperação" },
+        { name: "Exercícios pliométricos", details: "10 minutos: saltos e explosão" },
+        { name: "Recuperação", details: "5 minutos de alongamento dinâmico" }
+    ],
+  
+    parque_adolescente_avancado_1h30_cardio: [
+        { name: "Preparação atlética", details: "15 minutos de aquecimento completo" },
+        { name: "Cardio de resistência", details: "50 minutos: treino contínuo variado" },
+        { name: "Treino funcional", details: "20 minutos: exercícios específicos" },
+        { name: "Recuperação ativa", details: "5 minutos de relaxamento" }
+    ],
+
+    // PARQUE - ADULTO - CARDIO
+    parque_adulto_iniciante_30min_cardio: [
+        { name: "Aquecimento suave", details: "5 minutos de caminhada moderada" },
+        { name: "Cardio básico", details: "20 minutos de atividades de baixo impacto" },
+        { name: "Alongamento", details: "5 minutos de relaxamento muscular" }
+    ],
+  
+    parque_adulto_iniciante_1hora_cardio: [
+        { name: "Aquecimento progressivo", details: "10 minutos de preparação gradual" },
+        { name: "Caminhada/trote", details: "35 minutos alternando intensidades" },
+        { name: "Exercícios funcionais", details: "10 minutos de movimentos básicos" },
+        { name: "Relaxamento", details: "5 minutos de alongamento" }
+    ],
+  
+    parque_adulto_iniciante_1h30_cardio: [
+        { name: "Preparação corporal", details: "15 minutos de aquecimento completo" },
+        { name: "Cardio progressivo", details: "50 minutos de atividades variadas" },
+        { name: "Fortalecimento básico", details: "20 minutos de exercícios funcionais" },
+        { name: "Recuperação", details: "5 minutos de relaxamento" }
+    ],
+  
+    parque_adulto_intermediario_30min_cardio: [
+        { name: "Aquecimento", details: "5 minutos de preparação" },
+        { name: "Corrida intervalada", details: "20 minutos: 2 min corrida + 1 min caminhada" },
+        { name: "Finalização", details: "5 minutos de alongamento" }
+    ],
+  
+    parque_adulto_intermediario_1hora_cardio: [
+        { name: "Aquecimento - Caminhada", details: "10 minutos de caminhada em ritmo moderado" },
+        { name: "Corrida intervalada", details: "20 minutos: 2 min corrida + 1 min caminhada (repetir)" },
+        { name: "Exercícios funcionais", details: "15 minutos: burpees, jumping jacks, mountain climbers" },
+        { name: "Alongamento", details: "15 minutos de alongamento na grama" }
+    ],
+  
+    parque_adulto_intermediario_1h30_cardio: [
+        { name: "Aquecimento completo", details: "15 minutos de preparação progressiva" },
+        { name: "Cardio resistência", details: "45 minutos de corrida com variações" },
+        { name: "Circuito funcional", details: "25 minutos de exercícios variados" },
+        { name: "Recuperação", details: "5 minutos de relaxamento" }
+    ],
+  
+    parque_adulto_avancado_30min_cardio: [
+        { name: "Aquecimento dinâmico", details: "5 minutos de preparação intensa" },
+        { name: "HIIT avançado", details: "20 minutos de alta intensidade" },
+        { name: "Cool down", details: "5 minutos de recuperação" }
+    ],
+  
+    parque_adulto_avancado_1hora_cardio: [
+        { name: "Preparação atlética", details: "10 minutos de aquecimento específico" },
+        { name: "Treino intervalado", details: "35 minutos de alta intensidade" },
+        { name: "Exercícios pliométricos", details: "10 minutos de potência" },
+        { name: "Recuperação", details: "5 minutos de alongamento" }
+    ],
+  
+    parque_adulto_avancado_1h30_cardio: [
+        { name: "Aquecimento especializado", details: "15 minutos de preparação completa" },
+        { name: "Cardio de performance", details: "60 minutos de treino intenso" },
+        { name: "Trabalho funcional", details: "20 minutos de exercícios específicos" },
+        { name: "Recuperação ativa", details: "5 minutos de relaxamento" }
+    ],
+
+    // PARQUE - IDOSO - CARDIO
+    parque_idoso_iniciante_30min_cardio: [
+        { name: "Aquecimento suave", details: "8 minutos de movimentos articulares" },
+        { name: "Caminhada terapêutica", details: "15 minutos em ritmo confortável" },
+        { name: "Relaxamento", details: "7 minutos de alongamento suave" }
+    ],
+  
+    parque_idoso_iniciante_1hora_cardio: [
+        { name: "Preparação articular", details: "15 minutos de mobilização" },
+        { name: "Caminhada orientada", details: "30 minutos com pausas regulares" },
+        { name: "Exercícios respiratórios", details: "10 minutos de técnicas de respiração" },
+        { name: "Relaxamento", details: "5 minutos de alongamento" }
+    ],
+  
+    parque_idoso_iniciante_1h30_cardio: [
+        { name: "Aquecimento prolongado", details: "20 minutos de preparação gradual" },
+        { name: "Atividade cardio suave", details: "45 minutos de exercícios de baixo impacto" },
+        { name: "Fortalecimento leve", details: "20 minutos de exercícios funcionais" },
+        { name: "Recuperação", details: "5 minutos de relaxamento" }
+    ],
+  
+    parque_idoso_intermediario_30min_cardio: [
+        { name: "Aquecimento", details: "8 minutos de preparação" },
+        { name: "Caminhada acelerada", details: "17 minutos com variações de ritmo" },
+        { name: "Alongamento", details: "5 minutos de relaxamento" }
+    ],
+  
+    parque_idoso_intermediario_1hora_cardio: [
+        { name: "Preparação corporal", details: "15 minutos de aquecimento" },
+        { name: "Cardio moderado", details: "30 minutos de atividades variadas" },
+        { name: "Exercícios funcionais", details: "10 minutos de fortalecimento" },
+        { name: "Relaxamento", details: "5 minutos de alongamento" }
+    ],
+  
+    parque_idoso_intermediario_1h30_cardio: [
+        { name: "Aquecimento completo", details: "20 minutos de preparação" },
+        { name: "Atividade cardio", details: "45 minutos de exercícios moderados" },
+        { name: "Trabalho funcional", details: "20 minutos de exercícios específicos" },
+        { name: "Recuperação", details: "5 minutos de relaxamento" }
+    ],
+  
+    parque_idoso_avancado_30min_cardio: [
+        { name: "Aquecimento", details: "8 minutos de preparação" },
+        { name: "Cardio intensificado", details: "17 minutos de atividade moderada-intensa" },
+        { name: "Cool down", details: "5 minutos de recuperação" }
+    ],
+  
+    parque_idoso_avancado_1hora_cardio: [
+        { name: "Preparação", details: "15 minutos de aquecimento" },
+        { name: "Treino cardio", details: "35 minutos de intensidade moderada-alta" },
+        { name: "Exercícios complementares", details: "8 minutos de fortalecimento" },
+        { name: "Relaxamento", details: "2 minutos de alongamento" }
+    ],
+  
+    parque_idoso_avancado_1h30_cardio: [
+        { name: "Aquecimento especializado", details: "20 minutos de preparação" },
+        { name: "Cardio avançado", details: "50 minutos de treino estruturado" },
+        { name: "Trabalho funcional", details: "15 minutos de exercícios específicos" },
+        { name: "Recuperação", details: "5 minutos de relaxamento" }
+    ],
+
+    // PARQUE - FLEXIBILIDADE (todas as idades e níveis)
+    parque_adolescente_iniciante_30min_flexibilidade: [
+        { name: "Aquecimento articular", details: "5 minutos de mobilização" },
+        { name: "Alongamento básico", details: "20 minutos de posturas simples" },
+        { name: "Relaxamento", details: "5 minutos de respiração" }
+    ],
+  
+    parque_adulto_intermediario_1hora_flexibilidade: [
+        { name: "Preparação corporal", details: "10 minutos de aquecimento" },
+        { name: "Yoga ao ar livre", details: "35 minutos de sequências de yoga" },
+        { name: "Alongamento profundo", details: "12 minutos de posturas mantidas" },
+        { name: "Meditação", details: "3 minutos de relaxamento" }
+    ],
+  
+    parque_idoso_avancado_1h30_flexibilidade: [
+        { name: "Preparação suave", details: "15 minutos de aquecimento" },
+        { name: "Tai Chi avançado", details: "45 minutos de movimentos complexos" },
+        { name: "Alongamento terapêutico", details: "25 minutos de trabalho específico" },
+        { name: "Meditação", details: "5 minutos de relaxamento profundo" }
+    ],
+
+    // PARQUE - GERAL
+    parque_adolescente_intermediario_1hora_geral: [
+        { name: "Aquecimento dinâmico", details: "10 minutos: polichinelos, corrida estacionária" },
+        { name: "Circuito funcional", details: "25 minutos: estações com diferentes exercícios" },
+        { name: "Atividades lúdicas", details: "15 minutos: jogos e brincadeiras ativas" },
+        { name: "Relaxamento", details: "10 minutos de alongamento em grupo" }
+    ],
+  
+    parque_adulto_avancado_1h30_geral: [
+        { name: "Aquecimento completo", details: "15 minutos de preparação total" },
+        { name: "Treino funcional", details: "45 minutos: força, cardio e agilidade" },
+        { name: "Exercícios específicos", details: "25 minutos de trabalho direcionado" },
+        { name: "Recuperação", details: "5 minutos de alongamento e relaxamento" }
+    ],
+
+    // PRAIA - CARDIO
+    praia_adolescente_iniciante_30min_cardio: [
+        { name: "Aquecimento na areia", details: "5 minutos de caminhada suave" },
+        { name: "Corrida na areia", details: "15 minutos de trote leve" },
+        { name: "Exercícios funcionais", details: "8 minutos na areia fofa" },
+        { name: "Relaxamento", details: "2 minutos contemplando o mar" }
+    ],
+  
+    praia_adulto_intermediario_1hora_cardio: [
+        { name: "Aquecimento progressivo", details: "10 minutos de caminhada na areia" },
+        { name: "Corrida intervalada", details: "25 minutos alternando areia dura e fofa" },
+        { name: "Exercícios funcionais", details: "20 minutos: burpees, agachamentos na areia" },
+        { name: "Relaxamento", details: "5 minutos de alongamento frente ao mar" }
+    ],
+  
+    praia_idoso_avancado_1h30_cardio: [
+        { name: "Preparação na praia", details: "20 minutos de aquecimento gradual" },
+        { name: "Caminhada terapêutica", details: "50 minutos na beira da água" },
+        { name: "Exercícios na areia", details: "15 minutos de fortalecimento" },
+        { name: "Contemplação", details: "5 minutos de relaxamento" }
+    ],
+
+    // PRAIA - FLEXIBILIDADE
+    praia_adulto_iniciante_30min_flexibilidade: [
+        { name: "Aquecimento suave", details: "5 minutos de movimentos na areia" },
+        { name: "Yoga na praia", details: "20 minutos de posturas básicas" },
+        { name: "Meditação", details: "5 minutos ouvindo as ondas" }
+    ],
+  
+    praia_idoso_intermediario_1hora_flexibilidade: [
+        { name: "Preparação articular", details: "15 minutos de mobilização" },
+        { name: "Tai Chi na praia", details: "30 minutos de movimentos fluidos" },
+        { name: "Alongamento terapêutico", details: "12 minutos na areia" },
+        { name: "Relaxamento", details: "3 minutos de contemplação" }
+    ],
+
+    // PRAIA - GERAL
+    praia_adolescente_avancado_1h30_geral: [
+        { name: "Aquecimento dinâmico", details: "15 minutos de preparação na areia" },
+        { name: "Treino funcional", details: "50 minutos: cardio, força e agilidade" },
+        { name: "Atividades aquáticas", details: "20 minutos de exercícios na água" },
+        { name: "Recuperação", details: "5 minutos de relaxamento" }
+    ],
+
+    // QUINTAL - FLEXIBILIDADE
+    quintal_idoso_iniciante_30min_flexibilidade: [
+        { name: "Aquecimento suave", details: "5 minutos de movimentos articulares" },
+        { name: "Yoga ao ar livre", details: "15 minutos de posturas básicas de yoga" },
+        { name: "Tai Chi", details: "8 minutos de movimentos lentos e controlados" },
+        { name: "Meditação", details: "2 minutos de respiração e relaxamento" }
+    ],
+  
+    quintal_adulto_intermediario_1hora_flexibilidade: [
+        { name: "Preparação corporal", details: "10 minutos de aquecimento" },
+        { name: "Sequência de yoga", details: "35 minutos de posturas variadas" },
+        { name: "Alongamento profundo", details: "12 minutos de trabalho específico" },
+        { name: "Relaxamento", details: "3 minutos de meditação" }
+    ],
+
+    // QUINTAL - CARDIO
+    quintal_adolescente_iniciante_30min_cardio: [
+        { name: "Aquecimento no local", details: "5 minutos de movimentos preparatórios" },
+        { name: "Exercícios aeróbicos", details: "20 minutos de atividades no quintal" },
+        { name: "Cool down", details: "5 minutos de relaxamento" }
+    ],
+  
+    quintal_adulto_avancado_1h30_cardio: [
+        { name: "Preparação intensa", details: "15 minutos de aquecimento" },
+        { name: "HIIT no quintal", details: "60 minutos de treino intervalado" },
+        { name: "Exercícios funcionais", details: "12 minutos de finalização" },
+        { name: "Recuperação", details: "3 minutos de alongamento" }
+    ],
+
+    // QUINTAL - GERAL
+    quintal_adolescente_intermediario_1hora_geral: [
+        { name: "Aquecimento completo", details: "10 minutos de preparação" },
+        { name: "Circuito misto", details: "35 minutos: cardio, força e flexibilidade" },
+        { name: "Atividades lúdicas", details: "12 minutos de exercícios divertidos" },
+        { name: "Relaxamento", details: "3 minutos de alongamento" }
+    ],
+  
+    quintal_idoso_avancado_1h30_geral: [
+        { name: "Preparação gradual", details: "20 minutos de aquecimento" },
+        { name: "Treino completo", details: "50 minutos de atividades variadas" },
+        { name: "Fortalecimento", details: "15 minutos de exercícios específicos" },
+        { name: "Recuperação", details: "5 minutos de relaxamento" }
+    ]
+    };
+
+        // Handle option selection
+        document.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const field = this.dataset.field;
+                const value = this.dataset.value;
+                
+                // Remove selection from other buttons in the same group
+                document.querySelectorAll(`[data-field="${field}"]`).forEach(b => {
+                    b.classList.remove('selected');
+                });
+                
+                // Add selection to clicked button
+                this.classList.add('selected');
+                formData[field] = value;
+                
+                // Check if all fields are filled
+                checkFormCompletion();
+            });
+        });
+
+        function checkFormCompletion() {
+            const allFilled = Object.values(formData).every(value => value !== null);
+            document.getElementById('generateBtn').disabled = !allFilled;
+        }
+
+        // Handle form submission
+        document.getElementById('workoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            generateWorkout();
+        });
+
+        function generateWorkout() {
+            const key = `${formData.environment}_${formData.age}_${formData.fitness}_${formData.time}_${formData.goal}`;
+            let workout = outdoorWorkouts[key];
+            
+            // Fallback logic for combinations not explicitly defined
+            if (!workout) {
+                workout = getDefaultOutdoorWorkout();
+            }
+            
+            displayWorkout(workout);
+        }
+
+        function getDefaultOutdoorWorkout() {
+            if (formData.environment === 'praia') {
+                return [
+                    { 
+                        name: "Caminhada na Areia", 
+                        details: "15 minutos de exercício cardiovascular na praia em ritmo moderado",
+                    },
+                    { 
+                        name: "Exercícios Funcionais", 
+                        details: "15 minutos de fortalecimento usando a resistência da areia na areia fofa",
+                    },
+                    { 
+                        name: "Relaxamento Marinho", 
+                        details: "10 minutos de respiração e alongamento contemplando o mar",
+                    }
+                ];
+            }
+            
+            if (formData.goal === 'cardio') {
+                return [
+                    { 
+                        name: "Aquecimento ao Ar Livre", 
+                        details: "5 minutos de preparação cardiovascular",
+                    },
+                    { 
+                        name: "Atividade Cardiovascular", 
+                        details: "20-25 minutos de exercícios aeróbicos no ambiente natural",
+                    },
+                    { 
+                        name: "Desaquecimento Natural", 
+                        details: "5-10 minutos de alongamento e com recuperação em contato com a natureza",
+                    }
+                ];
+            }
+            
+            // Default general outdoor workout
+            return [
+                { 
+                    name: "Aquecimento ao Ar Livre", 
+                    details: "10 minutos de preparação corporal no ambiente natural",
+                },
+                { 
+                    name: "Atividade Principal", 
+                    details: "20 minutos de exercícios variados aproveitando o espaço",
+                },
+                { 
+                    name: "Relaxamento na Natureza", 
+                    details: "10 minutos de alongamento e contemplação do ambiente",
+                }
+            ];
+        }
+
+        function displayWorkout(workout) {
+            const content = document.getElementById('workoutContent');
+            content.innerHTML = workout.map(exercise => `
+                <div class="exercise">
+                    <div class="exercise-name">${exercise.name}</div>
+                    <div class="exercise-details">${exercise.details}</div>
+                </div>
+            `).join('');
+            
+            document.getElementById('formSection').style.display = 'none';
+            document.getElementById('workoutResult').style.display = 'block';
+        }
+
+        function resetForm() {
+            // Reset form data
+            Object.keys(formData).forEach(key => formData[key] = null);
+            
+            // Reset UI
+            document.querySelectorAll('.option-btn').forEach(btn => {
+                btn.classList.remove('selected');
+            });
+            
+            document.getElementById('generateBtn').disabled = true;
+            document.getElementById('formSection').style.display = 'block';
+            document.getElementById('workoutResult').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

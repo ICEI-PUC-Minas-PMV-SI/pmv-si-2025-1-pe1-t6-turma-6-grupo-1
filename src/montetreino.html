@@ -27,7 +27,7 @@
     <!-- CONTEÚDO PRINCIPAL -->
   <main class="treino-container">
     <h1>Aqui você encontrará um treino para você</h1>
-    <p class="subtitulo">mas antes preencha este formulário para nos te ajudarmos:</p>
+    <p class="subtitulo">mas antes preencha este formulário para nós te ajudarmos:</p>
     
     <div class="link-formulario">
       <a href="formulario.html" id="link-form">Link para o formulário</a>
@@ -38,11 +38,16 @@
     </div>
     
     <div class="instrucao">
-      <p>A partir do formulário preenchido<br>clique para gerar seu treino aqui <span class="seta">→</span></p>
+      <p>A partir do formulário preenchido<br>clique para gerar seu treino personalizado aqui:</p>
     </div>
     
     <div class="link-gerar">
-      <a href="#" id="gerar-treino" class="disabled">Link para gerar o treino baseado nas informações</a>
+      <a href="#" id="gerar-treino" class="disabled">Link para o treino customizado</a>
+    </div>
+
+    <!-- Status do formulário -->
+    <div id="status-formulario" class="status-info" style="display: none;">
+      <p id="status-texto"></p>
     </div>
   </main>
 
@@ -52,79 +57,160 @@
     <p> &copy; 2025 TreinUP - Todos os direitos reservados</p>
 </footer>
 
-    <script>
-    // Executa quando o DOM estiver completamente carregado
-    document.addEventListener('DOMContentLoaded', function() {
-        const loggedInUsername = localStorage.getItem("usuarioLogado");
-        const navAuthSection = document.getElementById('nav-auth-section');
+<script>
+// Função de logout (definida globalmente)
+function logout() {
+    localStorage.removeItem("usuarioLogado");
+    alert("Você saiu com sucesso.");
+    window.location.reload();
+}
 
-        if (loggedInUsername) {
-            // Usuário está logado
-            const userDataString = localStorage.getItem(loggedInUsername);
-            if (userDataString) {
-                const userData = JSON.parse(userDataString);
-
-                // Limpa o conteúdo atual do LI (o botão de Login/Cadastro)
-                navAuthSection.innerHTML = '';
-
-                // Adiciona a saudação
-                const greeting = document.createElement('span');
-                greeting.textContent = `Olá, ${userData.name}!`;
-                navAuthSection.appendChild(greeting);
-
-                // Adiciona o link "Ver Dados"
-                const viewDetailsLink = document.createElement('a');
-                viewDetailsLink.href = '#'; // Não navega para lugar nenhum
-                viewDetailsLink.textContent = 'Veja seus Dados';
-                viewDetailsLink.classList.add('user-action-link'); // Classe para estilização
-                viewDetailsLink.onclick = function(event) {
-                    event.preventDefault(); // Previne a navegação padrão do link
-                    // Exibe os dados (COM AVISO DE SEGURANÇA)
-                    alert(
-                        `Suas Informações:\n\n` +
-                        `Nome: ${userData.name}\n` +
-                        `Email: ${userData.email}\n` +
-                        `Usuário: ${loggedInUsername}\n` +
-                        `Senha: ${userData.password} (Atenção: Exibir senhas é inseguro!)`
-                    );
-                };
-                navAuthSection.appendChild(viewDetailsLink);
-
-                // Adiciona o botão "Sair"
-                const logoutButton = document.createElement('button');
-                logoutButton.textContent = 'Sair';
-                logoutButton.classList.add('btn-sair'); // Classe para estilização
-                logoutButton.onclick = function() {
-                    logout();
-                };
-                navAuthSection.appendChild(logoutButton);
-
-            } else {
-                // Caso raro: usuário logado existe, mas dados não encontrados
-                console.error("Dados do usuário logado não encontrados no localStorage.");
-                // Mantém o botão de login original ou exibe erro
-                navAuthSection.innerHTML = '<a href="login.html" class="btn">Login / Cadastro (Erro)</a>';
-                localStorage.removeItem("usuarioLogado"); // Limpa o login inválido
-            }
+// Função para verificar o status do formulário
+function verificarStatusFormulario() {
+    const formData = localStorage.getItem('formTreinoData');
+    const gerarTreinoBtn = document.getElementById('gerar-treino');
+    const statusDiv = document.getElementById('status-formulario');
+    const statusTexto = document.getElementById('status-texto');
+    
+    console.log('Verificando formulário...', formData ? 'Dados encontrados' : 'Sem dados');
+    
+    if (formData) {
+        try {
+            const dados = JSON.parse(formData);
+            console.log('Dados do formulário:', dados);
+            
+            // Formulário foi preenchido - habilitar botão
+            gerarTreinoBtn.classList.remove('disabled');
+            gerarTreinoBtn.style.opacity = '1';
+            gerarTreinoBtn.style.pointerEvents = 'auto';
+            gerarTreinoBtn.style.backgroundColor = '#B83333';
+            gerarTreinoBtn.style.color = 'white';
+            gerarTreinoBtn.style.padding = '10px 20px';
+            gerarTreinoBtn.style.borderRadius = '5px';
+            gerarTreinoBtn.style.textDecoration = 'none';
+            gerarTreinoBtn.style.display = 'inline-block';
+            
+            // Mostrar status
+            statusDiv.style.display = 'block';
+            statusTexto.innerHTML = `
+                <strong>Formulário preenchido!</strong><br>
+                <small>Objetivo: ${dados.objetivo.charAt(0).toUpperCase() + dados.objetivo.slice(1)} | 
+                Idade: ${dados.idade} anos | 
+                Altura: ${dados.altura} cm |
+                Peso: ${dados.peso}kg</small>
+            `;
+            statusDiv.style.backgroundColor = '#f3bebe';
+            statusDiv.style.color = '#960711';
+            statusDiv.style.border = '1px solid #c3e6cb';
+            statusDiv.style.padding = '15px';
+            statusDiv.style.borderRadius = '8px';
+            statusDiv.style.marginTop = '20px';
+            
+        } catch (error) {
+            console.error('Erro ao ler dados do formulário:', error);
+            localStorage.removeItem('formTreinoData');
+            desabilitarBotaoTreino();
         }
-        // Se não houver loggedInUsername, o HTML original do LI permanece (botão Login/Cadastro)
-    });
+    } else {
+        desabilitarBotaoTreino();
+    }
+}
 
-    function logout() {
-        // Remove o indicador de usuário logado
-        localStorage.removeItem("usuarioLogado");
-        alert("Você saiu com sucesso.");
-        // Recarrega a página para atualizar a navbar
-        window.location.reload();
+// Função para desabilitar o botão de treino
+function desabilitarBotaoTreino() {
+    const gerarTreinoBtn = document.getElementById('gerar-treino');
+    const statusDiv = document.getElementById('status-formulario');
+    const statusTexto = document.getElementById('status-texto');
+    
+    gerarTreinoBtn.classList.add('disabled');
+    gerarTreinoBtn.style.opacity = '0.5';
+    gerarTreinoBtn.style.pointerEvents = 'none';
+    gerarTreinoBtn.style.backgroundColor = '#B83333';
+    gerarTreinoBtn.style.color = 'white';
+    gerarTreinoBtn.style.padding = '10px 20px';
+    gerarTreinoBtn.style.borderRadius = '5px';
+    gerarTreinoBtn.style.textDecoration = 'none';
+    gerarTreinoBtn.style.display = 'inline-block';
+    
+    // Mostrar status
+    statusDiv.style.display = 'block';
+    statusTexto.innerHTML = `
+         <strong>Formulário não preenchido</strong><br>
+        <small>Preencha o formulário primeiro para gerar seu treino personalizado</small>
+    `;
+    statusDiv.style.backgroundColor = '#B83333';
+    statusDiv.style.color = '#fff';
+    statusDiv.style.border = '1px solid #ffeaa7';
+    statusDiv.style.padding = '15px';
+    statusDiv.style.borderRadius = '8px';
+    statusDiv.style.marginTop = '20px';
+}
 
-    // novo // Verificar se há dados de formulário salvos
-    const gerarTreinoBtn = document.getElementById('gerarTreino');
+// Executa quando o DOM estiver completamente carregado
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM carregado, iniciando verificações...');
+    
+    // Verificar se o usuário está logado
+    const loggedInUsername = localStorage.getItem("usuarioLogado");
+    const navAuthSection = document.getElementById('nav-auth-section');
+
+    if (loggedInUsername) {
+        const userDataString = localStorage.getItem(loggedInUsername);
+        if (userDataString) {
+            const userData = JSON.parse(userDataString);
+
+            navAuthSection.innerHTML = '';
+
+            const greeting = document.createElement('span');
+            greeting.textContent = `Olá, ${userData.name}!`;
+            navAuthSection.appendChild(greeting);
+
+            const viewDetailsLink = document.createElement('a');
+            viewDetailsLink.href = '#';
+            viewDetailsLink.textContent = 'Veja seus Dados';
+            viewDetailsLink.classList.add('user-action-link');
+            viewDetailsLink.onclick = function(event) {
+                event.preventDefault();
+                alert(
+                    `Suas Informações:\n\n` +
+                    `Nome: ${userData.name}\n` +
+                    `Email: ${userData.email}\n` +
+                    `Usuário: ${loggedInUsername}\n` +
+                    `Senha: ${userData.password} (Atenção: Exibir senhas é inseguro!)`
+                );
+            };
+            navAuthSection.appendChild(viewDetailsLink);
+
+            const logoutButton = document.createElement('button');
+            logoutButton.textContent = 'Sair';
+            logoutButton.classList.add('btn-sair');
+            logoutButton.onclick = function() {
+                logout();
+            };
+            navAuthSection.appendChild(logoutButton);
+
+        } else {
+            console.error("Dados do usuário logado não encontrados no localStorage.");
+            navAuthSection.innerHTML = '<a href="login.html" class="btn">Login / Cadastro (Erro)</a>';
+            localStorage.removeItem("usuarioLogado");
+        }
+    }
+
+    // Verificar status do formulário
+    verificarStatusFormulario();
+    
+    // Configurar o botão de gerar treino
+    const gerarTreinoBtn = document.getElementById('gerar-treino');
+    console.log('Botão encontrado:', gerarTreinoBtn);
+    
     if (gerarTreinoBtn) {
         gerarTreinoBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            console.log('Botão clicado!');
             
             // Verificar se o formulário foi preenchido
             const formData = localStorage.getItem('formTreinoData');
+            console.log('Dados do formulário no clique:', formData);
             
             if (!formData) {
                 alert('Por favor, preencha o formulário primeiro antes de gerar o treino.');
@@ -132,10 +218,36 @@
                 return;
             }
             
-            // Redirecionar para a página de treino gerado
-            window.location.href = '#';}); 
-        } // até aqui -  novo
+            try {
+                const dados = JSON.parse(formData);
+                console.log('Redirecionando para treino com dados:', dados);
+                
+                // Redirecionar para a página de treino gerado
+                window.location.href = 'treinopersonal.html';
+            } catch (error) {
+                console.error('Erro ao processar dados:', error);
+                alert('Erro nos dados do formulário. Por favor, preencha novamente.');
+                localStorage.removeItem('formTreinoData');
+                window.location.href = 'formulario.html';
+            }
+        });
+        
+        console.log('Event listener adicionado ao botão');
+    } else {
+        console.error('Botão gerar-treino não encontrado!');
     }
+});
+
+// Verificar periodicamente se o formulário foi preenchido
+setInterval(function() {
+    verificarStatusFormulario();
+}, 3000);
+
+// Para debug - verificar localStorage
+console.log('LocalStorage atual:', {
+    formTreinoData: localStorage.getItem('formTreinoData'),
+    usuarioLogado: localStorage.getItem('usuarioLogado')
+});
 </script>
-  </body>
+</body>
 </html>
