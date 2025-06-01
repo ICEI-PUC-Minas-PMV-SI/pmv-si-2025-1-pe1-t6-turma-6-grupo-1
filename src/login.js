@@ -75,27 +75,34 @@ function register() {
   const password = document.getElementById('newPassword').value;
   const confirmPassword = document.getElementById('confirmPassword').value;
 
+  // Dados de endereço
+  const cep = document.getElementById('cep').value;
+  const logradouro = document.getElementById('logradouro').value;
+  const bairro = document.getElementById('bairro').value;
+  const localidade = document.getElementById('localidade').value;
+  const uf = document.getElementById('uf').value;
+
   console.log("Tentando registrar usuário:", username);
-  
+
   // Verificar se todos os campos estão preenchidos
-  if (!name || !email || !username || !password || !confirmPassword) {
+  if (!name || !email || !username || !password || !confirmPassword || !cep || !logradouro || !bairro || !localidade || !uf) {
     alert('Por favor, preencha todos os campos.');
     return;
   }
-  
+
   // Validação de senha
   if (password.length < 6) {
     alert('A senha deve ter pelo menos 6 caracteres.');
     return;
   }
-  
+
   // Verificação de senhas iguais
   if (password !== confirmPassword) {
     alert('As senhas não coincidem.');
     return;
   }
-  
-  // Verifica formato de email básico
+
+  // Validação básica de email
   if (!email.includes('@') || !email.includes('.')) {
     alert('Email inválido. Por favor, insira um email válido.');
     return;
@@ -122,29 +129,35 @@ function register() {
     return;
   }
 
-  // Salva os dados do usuário no localStorage
+  // Salvar os dados no localStorage
   try {
-    const userData = { 
-      name, 
-      email, 
+    const userData = {
+      name,
+      email,
       password,
+      endereco: {
+        cep,
+        logradouro,
+        bairro,
+        cidade: localidade,
+        estado: uf
+      },
       registeredAt: new Date().toISOString()
     };
-    
+
     const userDataString = JSON.stringify(userData);
     console.log("Salvando dados:", userDataString);
-    
+
     localStorage.setItem(username, userDataString);
-    
-    // Verificar se os dados foram salvos corretamente
+
     const savedData = localStorage.getItem(username);
     if (!savedData) {
       throw new Error("Dados não foram salvos");
     }
-    
+
     console.log("Dados salvos com sucesso:", savedData);
-    
-    // Atualiza a lista de usuários (para facilitar a gestão)
+
+    // Atualiza a lista de usuários
     try {
       let usersList = JSON.parse(localStorage.getItem('usersList') || '[]');
       if (!usersList.includes(username)) {
@@ -153,15 +166,14 @@ function register() {
       }
     } catch (e) {
       console.error("Erro ao atualizar lista de usuários:", e);
-      // Não interrompe o fluxo se apenas a lista falhar
     }
-    
+
     alert('Cadastro realizado com sucesso!');
-    
-    // Salvar em cookie como backup (opcional)
+
+    // Backup em cookie (opcional)
     document.cookie = `user_${username}=${encodeURIComponent(userDataString)}; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
-    
-    toggleForm('login'); // Muda para o formulário de login
+
+    toggleForm('login');
   } catch (error) {
     console.error('Erro ao salvar dados:', error);
     alert('Ocorreu um erro ao salvar seus dados. Por favor, tente novamente.');
@@ -248,4 +260,31 @@ function logout() {
   console.log("Usuário deslogado com sucesso");
   alert('Você saiu com sucesso.');
   window.location.href = 'login.html';
+}
+
+function buscarEnderecoPorCEP() {
+  const cep = document.getElementById('cep').value.replace(/\D/g, '');
+
+  if (cep.length !== 8) {
+    alert('CEP inválido!');
+    return;
+  }
+
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.erro) {
+          alert('CEP não encontrado!');
+          return;
+        }
+
+        document.getElementById('logradouro').value = data.logradouro || '';
+        document.getElementById('bairro').value = data.bairro || '';
+        document.getElementById('localidade').value = data.localidade || '';
+        document.getElementById('uf').value = data.uf || '';
+      })
+      .catch(error => {
+        console.error('Erro ao buscar o CEP:', error);
+        alert('Erro ao buscar o endereço. Tente novamente.');
+      });
 }
