@@ -63,6 +63,79 @@ body {
   width: 100%;
 }
 
+/* Estilos para os elementos de usuário logado */
+#nav-auth-section {
+  display: flex;
+  align-items: center;
+  background-color: rgba(134, 47, 47, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  height: 40px;
+  margin-left: 2rem; 
+}
+
+#nav-auth-section span {
+  color: white;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.user-action-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin: 0 10px;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.user-action-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #FA9393;
+  transition: width 0.3s ease;
+}
+
+.user-action-link:hover {
+  color: #FA9393;
+  text-decoration: none;
+}
+
+.user-action-link:hover::after {
+  width: 100%;
+}
+
+.btn-sair {
+  background-color: white;
+  color: #e63946;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.btn-sair:hover {
+  background-color: #B83333;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(221, 62, 62, 0.2);
+}
+
+/* Faixa decorativa */
+.faixa-decorativa {
+  height: 15px;
+  background: linear-gradient(90deg, #B83333, #FA9393);
+}
+
 .form-container {
   max-width: 600px;
   margin: 2rem auto;
@@ -70,6 +143,12 @@ body {
   background-color: #f8dcdc;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-height: 400px;
+  margin-top: 7rem;
+}
+
+#inputs {
+  min-height: 200px; 
 }
 
 .form-container label {
@@ -79,12 +158,13 @@ body {
 }
 
 .form-container input{
-  width: 97%;
+  width: 100%; 
   padding: 0.6rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  box-sizing: border-box; 
 }
 
 .form-container select {
@@ -94,22 +174,24 @@ body {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  box-sizing: border-box; 
 }
 
 .form-container button {
   width: 100%;
   padding: 0.8rem;
-  background-color: #B83333;
+  background-color: #cc2b2e;
   color: white;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
+  box-sizing: border-box; 
 }
 
 .form-container button:hover {
-  background-color: #FA9393;
+  background-color: #B83333;
 }
 
 .resultados {
@@ -128,8 +210,8 @@ footer {
   gap: 30px;
   background-color: #B83333;
   color: white;
-  padding: 5px 0;
-  margin-top: 4rem;
+  padding: 25px 40px;
+  margin-top: 8rem;
 }
 
 footer img {
