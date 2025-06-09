@@ -24,22 +24,39 @@ Nesta seção o grupo deverá documentar os testes de software que verificam a c
 
 Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe qual o Requisito Funcional ou não funcional que ele está verificando. Associe também a página (ou artefato) onde o teste será realizado e descreva o cenário do teste. Veja a tabela de exemplo.
 
-
-**Caso de Teste** | **CT01 - Cadastro do usuário**
+**Caso de Teste** | **CT01 - Cadastrar uma conta**
  :--------------: | ------------
-**Procedimento**  | 1) Acesse o endereço www.teste.com.br <br> 2) Clique em criar conta <br> 2) Preencha todos os campos do formulário <br> 3) Clique no botão "Continuar".
+**Procedimento**  | 1) Preencha todos os campos do formulário <br> 2) Clique no botão "Cadastrar" <br> 3) Caso o usuário já tenha cadastro, basta clicar em "Já tenho conta".
 **Requisitos associados** | RF-001
-**Resultado esperado** | Prosseguir para a parte 2 do cadastro
-**Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucess
-
-**Caso de Teste** | **CT02 - Criar conta parte 2**
- :--------------: | ------------
-**Procedimento**  | 1) Preencha todos os campos do formulário <br> 2) Clique no botão "Criar conta" <br> 
-**Requisitos associados** | RF-001
-**Resultado esperado** | Usuário cadastrado
+**Resultado esperado** | Usuário cadastrado e tela de login
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro
 **Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT02 - Login do usuário**
+ :--------------: | ------------
+**Procedimento**  | 1) Acesse o endereço https://pd-h.github.io/TreinUPweb/login.html <br> 2) Preencha os campos "Usuário" e "Senha" no formulário <br> 3) Clique no botão "Entrar" <br> 4) Caso o usuário não tenha conta, clicar em "Novo Usuário".
+**Requisitos associados** | RF-002
+**Resultado esperado** | Acessar o site
+**Dados de entrada** | Inserção de nome de usuário e senha válidos no login
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT03 - Envio do formulário de avaliação física**
+ :--------------: | ------------
+**Procedimento**  | 1) Após se logar no site <br> 2) Acesse o endereço https://pd-h.github.io/TreinUPweb/montetreino.html - clicando em "Monte seu Treino" <br> 3) Clique em "Link do formulário" para acessar o formulário de avaliação física. <br> 4) Preencha os campos válidos no formulário, tais como, peso, altura, idade... <br> 3) Clique no botão "Enviar Formulário".
+**Requisitos associados** | RF-003
+**Resultado esperado** | Ter o formulário registrado e enviado
+**Dados de entrada** | Inserção de idade, peso, altura válidos, tal como, se o usuário possui alguma deficiência ou se já praticara alguma atividade física (no formulário)
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT04 - Visualização do treino gerado**
+ :--------------: | ------------
+**Procedimento**  | 1) Após a feitura e envio do formulário, o usuário deverá clicar em "Link para o treino customizado" <br> 2) O usuário poderá verificar seus dados anteriormente digitados, além de seu IMC, com a classificação dentre seu devido peso <br> 3) Ademais, a visualização do cronograma semanal, com exercícios a cada dia.
+**Requisitos associados** | RF-004 e RF-005
+**Resultado esperado** | Treino gerado, permitindo sua visualização
+**Dados de entrada** | Nenhum
+**Resultado obtido** | Sucesso
+
+
 
 ## Registro dos Testes de Software
 
