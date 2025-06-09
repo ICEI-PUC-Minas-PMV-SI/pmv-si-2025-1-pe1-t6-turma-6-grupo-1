@@ -31,7 +31,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Requisitos associados** | RF-001
 **Resultado esperado** | Prosseguir para a parte 2 do cadastro
 **Dados de entrada** | Inserção de dados válidos no formulário de cadastro
-**Resultado obtido** | Sucesso
+**Resultado obtido** | Sucess
 
 **Caso de Teste** | **CT02 - Criar conta parte 2**
  :--------------: | ------------
