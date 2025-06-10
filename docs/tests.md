@@ -102,8 +102,7 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |Requisito Associado | RF-002 |
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/1lMHEgxfWAVBD44mJA-n51zdYVmxmhxGp/view?usp=sharing | 
 
-|*Caso de Teste*                                 |*CT03 - Envio do formulário de avaliação física*                                       
-  |
+|*Caso de Teste*                                 |*CT03 - Envio do formulário de avaliação física*                                        |
 |---|---|
 |Requisito Associado | RF-003 |
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/1BtMC-tP1f4KO_bGuZDrsVzyRKNduVA4v/view?usp=sharing |
