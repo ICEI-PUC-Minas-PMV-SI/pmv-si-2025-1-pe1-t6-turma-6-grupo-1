@@ -92,15 +92,46 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
 
-|*Caso de Teste*                                 |*CT01 - Criar conta parte 1*                                         |
+|*Caso de Teste*                                 |*CT01 - Cadastrar uma conta*                                         |
 |---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: | https://1drv.ms/u/s!AhD2JqpOUvJChapRtRSQ9vPzbNLwGA?e=mxZs6t| 
+|Requisito Associado | RF-001 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1CoC8FaOCe3IBPwpfqvjS6sUqpmuTLc7L/view?usp=sharing| 
 
-|*Caso de Teste*                                 |*CT02 - Criar conta parte 2*                                        |
+|*Caso de Teste*                                 |*CT02 - Login do usuário*                                        |
 |---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: | https://1drv.ms/v/s!AhD2JqpOUvJChapQ8CPXL-TI_A7iVg?e=spD3Ar | 
+|Requisito Associado | RF-002 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1lMHEgxfWAVBD44mJA-n51zdYVmxmhxGp/view?usp=sharing | 
+
+|*Caso de Teste*                                 |*CT03 - Envio do formulário de avaliação física*                                       
+  |
+|---|---|
+|Requisito Associado | RF-003 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1BtMC-tP1f4KO_bGuZDrsVzyRKNduVA4v/view?usp=sharing |
+
+|*Caso de Teste*                                 |*CT04 - Visualização do treino gerado*                                        |
+|---|---|
+|Requisito Associado | RF-004 e RF-005 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/13Z5_WGBMEww82pRZHm_37LJc4O4ZSezO/view?usp=sharing |
+
+|*Caso de Teste*                                 |*CT05 - Adaptação de um treino em casa*                                        |
+|---|---|
+|Requisito Associado | RF-006 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1uCLFp7sYB6fGUsty7MPJIWTRCtEFFFQb/view?usp=sharing |
+
+|*Caso de Teste*                                 |*CT06 - Adaptação de um treino ao ar livre*                                        |
+|---|---|
+|Requisito Associado | RF-006 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1-8B_TsLbnrXMhh3kDxpanY0V4YK5_jz0/view?usp=sharing |
+
+|*Caso de Teste*                                 |*CT07 - Calculo do IMC, TMB, Calorias e ingestão de Água*                                        |
+|---|---|
+|Requisito Associado | RF-008 e RF-009 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/18-ncvMqPViMTRAqyO9adHr4RSyjUrSoQ/view?usp=sharing |
+
+|*Caso de Teste*                                 |*CT08 - Envio do feedback*                                        |
+|---|---|
+|Requisito Associado | RF-012 |
+|Link do vídeo do teste realizado: | https://drive.google.com/file/d/1_ECK0EFkt_-6KeqSFfPElqesLNjgzEvb/view?usp=sharing |
 
 
 ## Avaliação dos Testes de Software
