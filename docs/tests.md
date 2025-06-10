@@ -56,7 +56,37 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Nenhum
 **Resultado obtido** | Sucesso
 
+**Caso de Teste** | **CT05 - Adaptação de um treino em casa**
+ :--------------: | ------------
+**Procedimento**  | 1) Clique em "Treino personalizado em casa", encontrado na página principal - https://pd-h.github.io/TreinUPweb/index.html <br> 2) Selecione as opções que melhor se adequam <br> 3) Clicar em "Gerar Treino Personalizado" e em seguida gerará um treino baseado nas suas escolhas anteriores.
+**Requisitos associados** | RF-006
+**Resultado esperado** | Usuário possa ter gerado seu treino em casa
+**Dados de entrada** | Escolha de opções entre faixa etária, espaço do local, tempo disponível e a ausência ou não de alguma deficiência física
+**Resultado obtido** | Sucesso
 
+**Caso de Teste** | **CT06 - Adaptação de um treino ao ar livre**
+ :--------------: | ------------
+**Procedimento**  | 1) Clique em "Treino personalizado ao ar livre", encontrado na página principal - https://pd-h.github.io/TreinUPweb/index.html <br> 2) Selecione as opções que melhor se adequam <br> 3) Clicar em "Gerar Treino ao Ar Livre" e em seguida gerará um treino baseado nas suas escolhas anteriores.
+**Requisitos associados** | RF-006
+**Resultado esperado** | Usuário possa ter gerado seu treino ao ar livre
+**Dados de entrada** | Escolha de opções entre faixa etária, melhor ambiente disponível, tempo disponível, nível de condicionamento físico e seu objetivo primário
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT07 - Calculo do IMC, TMB, Calorias e ingestão de Água**
+ :--------------: | ------------
+**Procedimento**  | 1) Acesse a aba "Calcule" na barra de navegação <br> 2) O usuário irá escolher entre o cálculo do IMC, TMB, calorias ou água <br> 3) Após a escolha, coloque seu respectivo peso e altura <br> 4) Em seguida, basta clicar em "Calcular" para se obter o resultado.
+**Requisitos associados** | RF-008 e RF-009
+**Resultado esperado** | O cálculo aparecerá no retângulo abaixo
+**Dados de entrada** | Escolha e inserção de peso e altura do usuário no formulário
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT08 - Envio do feedback**
+ :--------------: | ------------
+**Procedimento**  | 1) Na página principal do site: https://pd-h.github.io/TreinUPweb/index.html - ao final dela, terá um link para um feedback <br> 2) Clique no botão "Com seu feedback aqui" <br> 3) Escolha entre os tópicos seguintes: "Montagem dos treinos" , "Sugestão de Melhoria" , "Crítica construtiva" , "Outros" <br> 4) Em seguida, escolha o nível de estrelas correspondente, de 1 a 5 <br> 5) Escreva sua avaliação no espaço abaixo <br> 6) Permita a opção ou não de ter seu feedback público <br> 7) Clicar em "Enviar Feedback", e terá seu feedback exposto na aba "Ver Feedbacks" e se puser público, ficará também em "Feedbacks Públicos".
+**Requisitos associados** | RF-012
+**Resultado esperado** | Usuário poderá escrever e enviar o seu feedback podendo vê-lo depois
+**Dados de entrada** | Escolha entre as opções postas, avaliação de 1 a 5 estrelas e a inserção de um texto válido, além da opção de selecionar se o feedback será público ou privado
+**Resultado obtido** | Sucesso
 
 ## Registro dos Testes de Software
 
