@@ -135,7 +135,9 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 
 ## Avaliação dos Testes de Software
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+Os testes de software confirmaram que os requisitos prioritários foram implementados e operam conforme o esperado.
+
+Pontos que poderião ter uma melhoria seria permitir que o próprio usuário edite e personalize seu treino gerado. Isso poderia incluir a opção de trocar exercícios, ajustar a duração ou intensidade, ou até mesmo criar treinos do zero. Testes para essa funcionalidade garantiriam que as alterações do usuário sejam salvas corretamente e reflitam no plano de treino. E tambem a adição de uma funcionalidade de lembretes para ingestão de água e refeições, com base nas metas do usuário.
 
 ## Testes de unidade automatizados (Opcional)
 
