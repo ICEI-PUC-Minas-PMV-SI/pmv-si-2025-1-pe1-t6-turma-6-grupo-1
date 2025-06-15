@@ -5,8 +5,6 @@ Neste projeto serão realizados dois tipos de testes:
  - O **Teste de Software**, que utiliza uma abordadem de caixa preta, e tem por objetivo verificar a conformidade do software com os requisitos funcionais e não funcionais do sistema.
  - O **Teste de Usabilidade**, que busca avaliar a qualidade do uso do sistema por um usuário do público alvo. 
 
-Se quiser conhecer um pouco mais sobre os tipos de teste de software, leia o documento [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/).
-
 A documentação dos testes é dividida nas seguintes seções:
 
  - [Plano de Testes de Software](#plano-de-testes-de-software)
@@ -21,8 +19,6 @@ A documentação dos testes é dividida nas seguintes seções:
 Nesta seção o grupo deverá documentar os testes de software que verificam a correta implementação dos requisitos funcionais e não funcionais do software.
 
 ## Plano de Testes de Software
-
-Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe qual o Requisito Funcional ou não funcional que ele está verificando. Associe também a página (ou artefato) onde o teste será realizado e descreva o cenário do teste. Veja a tabela de exemplo.
 
 **Caso de Teste** | **CT01 - Cadastrar uma conta**
  :--------------: | ------------
@@ -80,12 +76,28 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Escolha e inserção de peso e altura do usuário no formulário
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT08 - Envio do feedback**
+**Caso de Teste** | **CT08 - O tempo para gerar os cálculos**
+ :--------------: | ------------
+**Procedimento**  | 1) Acesse a aba "Calcule" na barra de navegação <br> 2) O usuário irá escolher entre o cálculo do IMC, TMB, calorias ou água <br> 3) Após a escolha, coloque seu respectivo peso e altura <br> 4) Em seguida, basta clicar em "Calcular" para se obter o resultado.
+**Requisitos associados** | RNF-007
+**Resultado esperado** | O cálculo aparecerá no retângulo abaixo em aproximadamente 1 segundo
+**Dados de entrada** | Nenhum
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT09 - Envio do feedback**
  :--------------: | ------------
 **Procedimento**  | 1) Na página principal do site: https://pd-h.github.io/TreinUPweb/index.html - ao final dela, terá um link para um feedback <br> 2) Clique no botão "Com seu feedback aqui" <br> 3) Escolha entre os tópicos seguintes: "Montagem dos treinos" , "Sugestão de Melhoria" , "Crítica construtiva" , "Outros" <br> 4) Em seguida, escolha o nível de estrelas correspondente, de 1 a 5 <br> 5) Escreva sua avaliação no espaço abaixo <br> 6) Permita a opção ou não de ter seu feedback público <br> 7) Clicar em "Enviar Feedback", e terá seu feedback exposto na aba "Ver Feedbacks" e se puser público, ficará também em "Feedbacks Públicos".
 **Requisitos associados** | RF-012
 **Resultado esperado** | Usuário poderá escrever e enviar o seu feedback podendo vê-lo depois
 **Dados de entrada** | Escolha entre as opções postas, avaliação de 1 a 5 estrelas e a inserção de um texto válido, além da opção de selecionar se o feedback será público ou privado
+**Resultado obtido** | Sucesso
+
+**Caso de Teste** | **CT10 - O design do site**
+ :--------------: | ------------
+**Procedimento**  | 1) Navegar pelo site.
+**Requisitos associados** | RNF-002
+**Resultado esperado** | A interface do sistema deve ser intuitiva e de fácil navegação para usuários de diferentes níveis de familiaridade com a tecnologia.
+**Dados de entrada** | Nenhum
 **Resultado obtido** | Sucesso
 
 ## Registro dos Testes de Software
@@ -127,7 +139,7 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 |Requisito Associado | RF-008 e RF-009 |
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/18-ncvMqPViMTRAqyO9adHr4RSyjUrSoQ/view?usp=sharing |
 
-|*Caso de Teste*                                 |*CT08 - Envio do feedback*                                        |
+|*Caso de Teste*                                 |*CT09 - Envio do feedback*                                        |
 |---|---|
 |Requisito Associado | RF-012 |
 |Link do vídeo do teste realizado: | https://drive.google.com/file/d/1_ECK0EFkt_-6KeqSFfPElqesLNjgzEvb/view?usp=sharing |
@@ -135,21 +147,19 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 
 ## Avaliação dos Testes de Software
 
-Os testes de software confirmaram que os requisitos prioritários foram implementados e operam conforme o esperado.
+Os testes de software realizados confirmaram que todos os requisitos prioritários foram devidamente implementados e estão funcionando conforme o esperado, garantindo a entrega das principais funcionalidades previstas para o sistema.
 
-Pontos que poderiam ter uma melhoria seriam permitir que o próprio usuário edite e personalize seu treino gerado. Isso poderia incluir a opção de trocar exercícios, ajustar a duração ou intensidade, ou até mesmo criar treinos do zero. Além disso, a adição de uma funcionalidade de lembretes para ingestão de água e refeições, com base nas metas do usuário.
+No entanto, identificamos oportunidades de aprimoramento para versões futuras, visando tornar a experiência do usuário ainda mais completa e personalizada. Entre as possíveis melhorias, destaca-se a implementação de recursos que permitam ao próprio usuário editar e personalizar seus treinos gerados pelo sistema. Isso incluiria opções como substituir exercícios, ajustar a duração e a intensidade das atividades, além de possibilitar a criação de treinos totalmente personalizados a partir do zero, atendendo de forma mais precisa às necessidades e preferências individuais de cada usuário.
 
-## Testes de unidade automatizados (Opcional)
+Outra sugestão relevante é a inclusão de funcionalidades de lembretes automáticos para ingestão de água e refeições, baseados nas metas e objetivos definidos pelo usuário. Esse tipo de recurso contribui para o acompanhamento mais efetivo dos hábitos diários, promovendo maior engajamento e auxiliando na conquista dos resultados desejados.
 
-Se o grupo tiver interesse em se aprofundar no desenvolvimento de testes de software, ele podera desenvolver testes automatizados de software que verificam o funcionamento das funções JavaScript desenvolvidas. Para conhecer sobre testes unitários em JavaScript, leia 0 documento  [Ferramentas de Teste para Java Script](https://geekflare.com/javascript-unit-testing/).
+Essas melhorias, alinhadas às tendências dos melhores aplicativos de treino e personal trainer, têm potencial para elevar o nível de personalização, autonomia e motivação dos usuários, tornando o sistema ainda mais competitivo e eficiente no mercado de soluções para saúde e bem-estar.
 
 # Testes de Usabilidade
 
 O objetivo do Plano de Testes de Usabilidade é obter informações quanto à expectativa dos usuários em relação à  funcionalidade da aplicação de forma geral.
 
-Para tanto, elaboramos quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
-
-Foram convidadas quatro pessoas que os perfis se encaixassem nas definições das histórias apresentadas na documentação, visando averiguar os seguintes indicadores:
+Para tanto, elaboramos quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto, visando averiguar os seguintes indicadores:
 
 Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
 
@@ -162,13 +172,6 @@ Satisfação subjetiva: responde como o usuário avalia o sistema com relação 
 5. Ótimo.
 
 Tempo para conclusão da tarefa: em segundos, e em comparação com o tempo utilizado quando um especialista (um desenvolvedor) realiza a mesma tarefa.
-
-Objetivando respeitar as diretrizes da Lei Geral de Proteção de Dados, as informações pessoais dos usuários que participaram do teste não foram coletadas, tendo em vista a ausência de Termo de Consentimento Livre e Esclarecido.
-
-Apresente os cenários de testes utilizados na realização dos testes de usabilidade da sua aplicação. Escolha cenários de testes que demonstrem as principais histórias de usuário sendo realizadas. Neste tópico o grupo deve detalhar quais funcionalidades avaliadas, o grupo de usuários que foi escolhido para participar do teste e as ferramentas utilizadas.
-
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
-
 
 ## Cenários de Teste de Usabilidade
 
