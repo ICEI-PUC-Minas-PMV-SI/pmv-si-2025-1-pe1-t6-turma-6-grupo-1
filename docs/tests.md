@@ -190,43 +190,68 @@ Cenário 1: Você é uma pessoa que deseja encontrar treinos simples, guiados e 
 
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 27.87 segundos                  |
-| 2       | SIM             | 5                    | 17.11 segundos                  |
-| 3       | SIM             | 5                    | 39.09 segundos                  |
+| 1       | SIM             | 5                    | 67.80 segundos                  |
+| 2       | SIM             | 5                    | 98.92 segundos                  |
+| 3       | SIM             | 5                    | 181.07 minutos                  |
 |  |  |  |  |
-| **Média**     | 100%           | 5                | 28.02 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 8.66 segundos |
+| **Média**     | 100%           | 5                | 115.93 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 27.46 segundos |
 
 
-    Comentários dos usuários: Achei o site muito bom e intuitivo. 
-    Não tive dificuldades e acho que ficou bem intuitivo.
+    Comentários dos usuários: A plataforma é bem intuitiva, consegui encontrar treinos adequados para iniciantes rapidamente. 
+    Depois de acessar e ver os treinos me senti bem mais motivado.
 
 
-Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço.
-
+Cenário 2: Você é uma pessoa que deseja um planejamento alimentar personalizado e alinhado aos meus objetivos para alcançar resultados saudáveis e eficientes.
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 22.54 segundos                          |
-| 2       | SIM             | 5                    | 31.42 segundos                          |
-| 3       | SIM             | 4                    | 36.21 segundos                          |
+| 1       | SIM             | 5                    | 40.54 segundos                          |
+| 2       | SIM             | 5                    | 56.42 segundos                          |
+| 3       | SIM             | 4                    | 68.21 segundos                          |
 |  |  |  |  |
-| **Média**     | 100%           | 4.67                | 30.05 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 13.57 segundos |
+| **Média**     | 100%           | 4.67                | 55.05 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 21.57 segundos |
 
 
-    Comentários dos usuários: O site é fácil de acessar, mas algumas páginas poderiam 
-    redirecionar a gente automaticamente para outras. Senti a falta de mais opções de filtros, 
-    tanto na hora da pesquisa, quanto depois dela, nos resultados.
+    Comentários dos usuários: O site me proporciona um ótima planejamento, com os cálculos das principais coisas que são necessárias, mas poderia melhorar.
 
+Cenário 3: Você é uma pessoa que deseja acessar treinos eficientes que se adaptam a espaços pequenos, com ou sem equipamentos, facilitando a prática mesmo com pouco espaço.
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| 1       | SIM             | 5                    | 10.28 segundos                          |
+| 2       | SIM             | 5                    | 12.91 segundos                          |
+| 3       | SIM             | 5                    | 14.75 segundos                          |
+|  |  |  |  |
+| **Média**     | 100%           | 5                | 12.64 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 5.52 segundos |
+
+
+    Comentários dos usuários: Excelente a parte em que posso escolher e deixar o melhor treino para mim, na minha casa.
+    Muito fácil a navegação e interface bonita.
+
+Cenário 4: Você é uma pessoa que deseja receber sugestões de treinos para parques e praças, sem necessidade de equipamentos, para diversificar e aproveitar o ambiente externo.
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| 1       | SIM             | 5                    | 9.61 segundos                          |
+| 2       | SIM             | 5                    | 11.57 segundos                          |
+| 3       | SIM             | 5                    | 13.45 segundos                          |
+|  |  |  |  |
+| **Média**     | 100%           | 5                | 11.54 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 4.86 segundos |
+
+
+    Comentários dos usuários: Mesma interface do treino em casa, como gostei da anterior, essa ficou ótima.
+    Perfeito para iniciantes e também gostei da variedade de opções que possui essa parte.
+    
 ## Avaliação dos Testes de Usabilidade
 
-Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
+Com base nos resultados apresentados, é possível constatar que a plataforma de treinos demonstra excelente desempenho em relação ao sucesso das interações dos usuários, evidenciando que todos os cenários de uso foram completados de forma eficaz.
 
-Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo).
+Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo). Segundo Dishman e Buckworth (1996), "a motivação intrínseca e a percepção positiva da experiência são fatores determinantes para a continuidade da prática de exercícios físicos", aspecto que parece estar bem contemplado na interface desenvolvida.
 
-Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas, etc.
+Quanto ao tempo necessário para completar cada tarefa, observou-se uma diferença considerável entre a performance dos usuários e a do especialista em todos os cenários testados. Essa disparidade é, em parte, previsível, considerando que o desenvolvedor possui conhecimento aprofundado sobre a estrutura da aplicação, localização dos elementos e organização das funcionalidades.
 
-Contudo, tendo em vista que a diferença foi relevante (por exemplo, 113 segundos — média usuários — contra 25 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos haver oportunidades de melhoria na usabilidade da aplicação.
+Entretanto, dado que essa diferença temporal foi significativa, e considerando alguns apontamentos feitos pelos participantes, identificamos oportunidades de aprimoramento na experiência do usuário.
 
 
 
