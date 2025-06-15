@@ -137,7 +137,7 @@ Esta seção deve apresentar o relatório com as evidências dos testes de softw
 
 Os testes de software confirmaram que os requisitos prioritários foram implementados e operam conforme o esperado.
 
-Pontos que poderiam ter uma melhoria seriam permitir que o próprio usuário edite e personalize seu treino gerado. Isso poderia incluir a opção de trocar exercícios, ajustar a duração ou intensidade, ou até mesmo criar treinos do zero e a adição de uma funcionalidade de lembretes para ingestão de água e refeições, com base nas metas do usuário.
+Pontos que poderiam ter uma melhoria seriam permitir que o próprio usuário edite e personalize seu treino gerado. Isso poderia incluir a opção de trocar exercícios, ajustar a duração ou intensidade, ou até mesmo criar treinos do zero. Além disso, a adição de uma funcionalidade de lembretes para ingestão de água e refeições, com base nas metas do usuário.
 
 ## Testes de unidade automatizados (Opcional)
 
