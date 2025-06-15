@@ -247,7 +247,7 @@ Cenário 4: Você é uma pessoa que deseja receber sugestões de treinos para pa
 
 Com base nos resultados apresentados, é possível constatar que a plataforma de treinos demonstra excelente desempenho em relação ao sucesso das interações dos usuários, evidenciando que todos os cenários de uso foram completados de forma eficaz.
 
-Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo). Segundo Dishman e Buckworth (1996), "a motivação intrínseca e a percepção positiva da experiência são fatores determinantes para a continuidade da prática de exercícios físicos", aspecto que parece estar bem contemplado na interface desenvolvida.
+Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo). Segundo Dishman e Buckworth (1996), " a motivação intrínseca e a percepção positiva da experiência são fatores determinantes para a continuidade da prática de exercícios físicos ", aspecto que parece estar bem contemplado na interface desenvolvida.
 
 Quanto ao tempo necessário para completar cada tarefa, observou-se uma diferença considerável entre a performance dos usuários e a do especialista em todos os cenários testados. Essa disparidade é, em parte, previsível, considerando que o desenvolvedor possui conhecimento aprofundado sobre a estrutura da aplicação, localização dos elementos e organização das funcionalidades.
 
