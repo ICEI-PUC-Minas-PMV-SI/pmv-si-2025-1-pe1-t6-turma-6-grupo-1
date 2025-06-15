@@ -161,7 +161,7 @@ O objetivo do Plano de Testes de Usabilidade é obter informações quanto à ex
 
 Para tanto, elaboramos quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
 
-Além disso, houve uma entrevista, com cada dos quatro diferentes usuários postos nas histórias, visando averiguar os seguintes indicadores:
+Além disso, houve uma verificação, com os respectivos quatro diferentes tipos usuários postos nas histórias, visando averiguar os seguintes indicadores:
 
 Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
 
