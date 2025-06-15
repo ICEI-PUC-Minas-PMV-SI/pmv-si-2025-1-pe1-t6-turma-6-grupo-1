@@ -159,7 +159,9 @@ Essas melhorias, alinhadas às tendências dos melhores aplicativos de treino e 
 
 O objetivo do Plano de Testes de Usabilidade é obter informações quanto à expectativa dos usuários em relação à  funcionalidade da aplicação de forma geral.
 
-Para tanto, elaboramos quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto, visando averiguar os seguintes indicadores:
+Para tanto, elaboramos quatro cenários, cada um baseado na definição apresentada sobre as histórias dos usuários, definido na etapa das especificações do projeto.
+
+Além disso, houve uma entrevista, com cada dos quatro diferentes usuários postos nas histórias, visando averiguar os seguintes indicadores:
 
 Taxa de sucesso: responde se o usuário conseguiu ou não executar a tarefa proposta;
 
@@ -177,14 +179,14 @@ Tempo para conclusão da tarefa: em segundos, e em comparação com o tempo util
 
 | Nº do Cenário | Descrição do cenário |
 |---------------|----------------------|
-| 1             | Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
-
-
+| 1             | Você é uma pessoa que deseja encontrar treinos simples, guiados e adaptáveis ao meu nível para criar uma rotina segura e motivadora de exercícios. |
+| 2             | Você é uma pessoa que deseja um planejamento alimentar personalizado e alinhado aos meus objetivos para alcançar resultados saudáveis e eficientes. |
+| 3             | Você é uma pessoa que deseja acessar treinos eficientes que se adaptam a espaços pequenos, com ou sem equipamentos, facilitando a prática mesmo com pouco espaço. |
+| 4             | Você é uma pessoa que deseja receber sugestões de treinos para parques e praças, sem necessidade de equipamentos, para diversificar e aproveitar o ambiente externo. |
 
 ## Registro de Testes de Usabilidade
 
-Cenário 1: Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando.
+Cenário 1: Você é uma pessoa que deseja encontrar treinos simples, guiados e adaptáveis ao meu nível para criar uma rotina segura e motivadora de exercícios.
 
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
