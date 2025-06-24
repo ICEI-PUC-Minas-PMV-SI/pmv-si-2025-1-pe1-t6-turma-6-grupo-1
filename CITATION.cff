@@ -8,8 +8,8 @@ message: >-
   Web da PUC Minas.
 type: software
 authors:
-  - given-names: Pedro 
-    family-names: Pedro Henrique Lyra Barbosa
+  - given-names: Pedro Henrique
+    family-names: Lyra Barbosa
     email: 1597961@sga.pucminas.br
     affiliation: PUC Minas
   - given-names: Diogo 
