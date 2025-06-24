@@ -24,6 +24,10 @@ authors:
     family-names: 
     email: 
     affiliation: PUC Minas
+- name-suffix: Professor
+    given-names: Clóvis
+    family-names: Lemos Tavares
+    affiliation: PUC Minas
 repository-code: >-
     https://github.com/ICEI-PUC-Minas-PMV-SI/pmv-si-2025-1-pe1-t6-turma-6-grupo-1
 abstract: >-
