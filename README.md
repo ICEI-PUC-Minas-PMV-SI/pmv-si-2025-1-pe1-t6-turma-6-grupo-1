@@ -17,7 +17,7 @@ O projeto tem como objetivo principal desenvolver uma aplicação Web voltada pa
 * Álvaro Pereira Rodarte
 * Diogo Senhorinha Souza
 * Thais de Souza Santos
-* Nome completo do aluno 5
+* Lucas José campos Pacheco
 
 
 ## Orientador
